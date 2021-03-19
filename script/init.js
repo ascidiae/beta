@@ -222,6 +222,11 @@ function cargaMenu(){
 		contenedor.appendChild(img)
 	}
 	
+	var div=document.createElement("div")
+	div.classList.add("separador")
+	div.textContent="."
+	footer.appendChild(div)
+	
 	if("scrollTo" in footer)
 		if(window.innerWidth>window.innerHeight)
 			footer.scrollTo(0, footer.scrollHeight/2 - footer.offsetHeight/2)

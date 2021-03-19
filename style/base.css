@@ -212,3 +212,8 @@ body.vertical #ayudante{
 	opacity:0.75;
 }
 
+.vertical .separador{
+	width:5vw;
+	background:red;
+	opacity:0;
+}
