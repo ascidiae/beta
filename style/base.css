@@ -1,9 +1,9 @@
 html, body{
 	padding:0;
 	margin:0;
-	height:100%;
-	overscroll-behavior: contain;
-	overflow-y:hidden;
+	height:100vh;
+	//overscroll-behavior: contain;
+	//overflow-y:hidden;
 }
 
 #botondia{
