@@ -6,7 +6,7 @@ html, body{
 }
 
 #botondia{
-	background:radial-gradient(green, darkblue);
+	background:radial-gradient(red, darkblue);
 	border-radius:100% 100% 0 0;
 	border:1px solid black;
 	border-bottom-width:0;
