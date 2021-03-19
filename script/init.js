@@ -225,10 +225,10 @@ function compraAscidia(t){
 		//console.log(originales[cc[i].index].coste)
 		
 		if(originales[cc[i].index].coste=="cualquiera")
-			cc[i].imagen.onmousedown=function(e){empiezaArrastre(originales[cc[i].index].coste,e)}
+			cc[i].imagen.onmousedown=cc[i].imagen.ontouchstart=function(e){empiezaArrastre(originales[cc[i].index].coste,e)}
 		else
 			if(originales[cc[i].index].coste[0]<=t.renacuajos[0].length && originales[cc[i].index].coste[1]<=t.renacuajos[1].length && originales[cc[i].index].coste[2]<=t.renacuajos[2].length)
-				cc[i].imagen.onmousedown=function(e){empiezaArrastre(originales[cc[i].index].coste,e)}
+				cc[i].imagen.onmousedown=cc[i].imagen.ontouchstart=function(e){empiezaArrastre(originales[cc[i].index].coste,e)}
 			else
 				cc[i].style.filter="brightness(75%) grayscale(100%)"
 		
@@ -243,7 +243,7 @@ function quitarFiltros(){
 	var cc=document.getElementsByClassName("contenedorCompra")
 	//console.log(t)
 	for(var i=0;i<cc.length;i++){
-		cc[i].imagen.onmousedown=null;
+		cc[i].imagen.onmousedown=cc[i].imagen.ontouchstart=null;
 		cc[i].style.filter=""
 	}
 }

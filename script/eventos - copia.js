@@ -35,7 +35,7 @@ function empiezaArrastre(coste,e){
 	ayudante.fasey=t.clientY-t.target.clientY
 	ayudante.fasex=t.clientX-t.target.clientX
 	
-	ayudante.onclick=ayudante.ontouchstart=function(){
+	ayudante.onclick=function(){
 		//console.log(ayudante.direc)
 		ayudante.direc++
 		ayudante.direc=((ayudante.direc%4)+4)%4
@@ -43,7 +43,7 @@ function empiezaArrastre(coste,e){
 		//console.log(ayudante.getAttribute("direccion"))
 	}
 	
-	contraventana.onclick=contraventana.ontouchstart=function(e){
+	contraventana.onclick=function(e){
 		e.stopPropagation()
 		e.preventDefault()
 		document.onmouseup=document.ontouchend=null
@@ -54,13 +54,13 @@ function empiezaArrastre(coste,e){
 		botondia.value="×3"
 		botondia.disabled=false
 		
-		botondia.onclick=botondia.ontouchstart=function(){
+		botondia.onclick=function(){
 			botondia.disabled=true
 			botondia.value="▶"
-			botondia.onclick=botondia.ontouchstart=dia
+			botondia.onclick=dia
 			ventana.classList.add("activa")
-			ayudante.onclick=ayudante.ontouchstart=null
-			contraventana.onclick=contraventana.ontouchstart=null
+			ayudante.onclick=null
+			contraventana.onclick=null
 			document.onmousemove=document.ontouchmove=null
 			document.onmouseup=document.ontouchend=null
 			document.onmouseleave=document.ontouchcancel=null
@@ -69,9 +69,9 @@ function empiezaArrastre(coste,e){
 		
 	}
 	
-	document.onmousemove=document.ontouchmove=moverAyudante
-	document.onmouseup=document.ontouchend=function(e){colocarAyudante(coste,e)}
-	document.onmouseleave=document.ontouchcancel=finAyudante
+	document.onmousemove=moverAyudante
+	document.onmouseup=function(e){colocarAyudante(coste,e)}
+	document.onmouseleave=finAyudante
 
 	ayudante.posx=-1
 	ayudante.posy=-1
@@ -88,7 +88,7 @@ function colocarAyudante(coste, e){
 	if(ayudante.posx>=0 && ayudante.posy>=0){
 		botondia.value="✓"
 		botondia.disabled=false
-		botondia.onclick=botondia.ontouchstart=function(){
+		botondia.onclick=function(){
 			ayudante.classList.remove("activo")
 			botondia.disabled=true
 			botondia.value="▶"
@@ -119,9 +119,9 @@ function colocarAyudante(coste, e){
 					if(d1) ventana.appendChild(icono2)
 					if(d2) ventana.appendChild(icono3)
 
-					icono1.onclick=icono1.ontouchstart=function(){consume(pagante,0); ventana.classList.remove("activa");finHabilidad()}
-					icono2.onclick=icono2.ontouchstart=function(){consume(pagante,1); ventana.classList.remove("activa");finHabilidad()}
-					icono3.onclick=icono3.ontouchstart=function(){consume(pagante,2); ventana.classList.remove("activa");finHabilidad()}
+					icono1.onclick=function(){consume(pagante,0); ventana.classList.remove("activa");finHabilidad()}
+					icono2.onclick=function(){consume(pagante,1); ventana.classList.remove("activa");finHabilidad()}
+					icono3.onclick=function(){consume(pagante,2); ventana.classList.remove("activa");finHabilidad()}
 
 				}
 				else{ //un solo color, cobrarlo
@@ -141,11 +141,11 @@ function colocarAyudante(coste, e){
 			///////////
 			
 			actualizar()
-			botondia.onclick=botondia.ontouchstart=dia
-			document.onmousemove=document.ontouchmove=null
-			document.onmouseup=document.ontouchend=null
-			document.onmouseleave=document.ontouchcancel=null
-			contraventana.onclick=contraventana.ontouchstart=null
+			botondia.onclick=dia
+			document.onmousemove=null
+			document.onmouseup=null
+			document.onmouseleave=null
+			contraventana.onclick=null
 			quitarFiltros()
 			
 			compraActiva=false
@@ -161,9 +161,9 @@ function finAyudante(e){
 	
 	ayudante.classList.remove("activo")
 	
-	document.onmousemove=document.ontouchmove=null
-	document.onmouseup=document.ontouchend=null
-	document.onmouseleave=document.ontouchcancel=null
+	document.onmousemove=null
+	document.onmouseup=null
+	document.onmouseleave=null
 	
 }
 
@@ -173,7 +173,7 @@ function moverAyudante(e){
 	if(e.touches)
 		t=e.touches[0]
 	
-	e.preventDefault()
+	t.preventDefault()
 	
 
 	if(!e.touches || e.touches.length==1){
@@ -203,7 +203,7 @@ function girar(){
 	ventana.classList.remove("activa")
   
 	for(let i=0;i<lista.length;i++){
-		lista[i].dom.onclick=lista[i].dom.ontouchstart=function(e){
+		lista[i].dom.onclick=function(e){
 			
 			e.stopPropagation()
 			ayudante.style=""
@@ -216,12 +216,12 @@ function girar(){
 			ayudante.classList.add("activo")
 			ayudante.src=lista[i].img.src;
 			
-			ayudante.direc=lista[i].dir
+			ayudante.direc=lista[i].dir+1
 			ayudante.setAttribute("direccion",ayudante.direc)
 		
 			botondia.value="✓"
 			botondia.disabled=false
-			botondia.onclick=botondia.ontouchstart=function(){
+			botondia.onclick=function(){
 				
 				e.stopPropagation()
 				ayudante.classList.remove("activo")
@@ -229,13 +229,13 @@ function girar(){
 				botondia.value="▶"
 				lista[i].dir=ayudante.direc
 				lista[i].img.setAttribute("direccion", lista[i].dir)
-				botondia.onclick=botondia.ontouchstart=dia
+				botondia.onclick=dia
         
 				for(var j=0;j<lista.length;j++)
-					lista[j].dom.onclick=lista[j].dom.ontouchstart=null
+					lista[j].dom.onclick=null
 				
-				document.onclick=document.ontouchstart=null
-				ayudante.onclick=ayudante.ontouchstart=null
+				document.onclick=null
+				ayudante.onclick=null
 				actualizar()
 				finHabilidad()
 
@@ -243,15 +243,14 @@ function girar(){
 		}
 	}
 	
-	ayudante.onclick=ayudante.ontouchstart=function(e){
+	ayudante.onclick=function(e){
 		e.stopPropagation()
-		e.preventDefault()
 		ayudante.direc=(ayudante.direc+1)%4
 		ayudante.setAttribute("direccion",ayudante.direc)
 
 		botondia.value="✓"
 		botondia.disabled=false
-		botondia.onclick=botondia.ontouchstart=function(){
+		botondia.onclick=function(){
 			
 			e.stopPropagation()
 			ayudante.classList.remove("activo")
@@ -259,13 +258,13 @@ function girar(){
 			botondia.value="▶"
 			lista[buscaAscidia(ayudante.posx, ayudante.posy)].dir=ayudante.direc
 			lista[buscaAscidia(ayudante.posx, ayudante.posy)].img.setAttribute("direccion", ayudante.direc)
-			botondia.onclick=botondia.ontouchstart=dia
+			botondia.onclick=dia
 	
 			for(var j=0;j<lista.length;j++)
-				lista[j].dom.onclick=lista[j].dom.ontouchstart=null
+				lista[j].dom.onclick=null
 			
-			document.onclick=document.ontouchstart=null
-			ayudante.onclick=ayudante.ontouchstart=null
+			document.onclick=null
+			ayudante.onclick=null
 			actualizar()
 			finHabilidad()
 
@@ -273,21 +272,21 @@ function girar(){
 
 	}
 	
-	document.onclick=document.ontouchstart=function(e){
+	document.onclick=function(e){
 		e.stopPropagation()
 		botondia.value="×1"
 		botondia.disabled=false
-		botondia.onclick=botondia.ontouchstart=function(){
+		botondia.onclick=function(){
 			ayudante.classList.remove("activo")
 			ventana.classList.add("activa")
-			ayudante.onclick=ayudante.ontouchstart=null
-			document.onclick=document.ontouchstart=null
+			ayudante.onclick=null
+			document.onclick=null
 			botondia.disabled=true
 			botondia.value="▶"
-			botondia.onclick=botondia.ontouchstart=dia
+			botondia.onclick=dia
 
 			for(let i=0;i<lista.length;i++)
-				lista[i].dom.onclick=lista[i].dom.ontouchstart=null
+				lista[i].dom.onclick=null
 		}
 	}
 }
@@ -296,7 +295,7 @@ function mover(){
 	ventana.classList.remove("activa")
 	
 	for(let i=0;i<lista.length;i++){
-		lista[i].dom.onmousedown=lista[i].dom.ontouchstart=function(e){
+		lista[i].dom.onmousedown=lista[i].dom.touchstart=function(e){
 			botondia.style.background="red"
 			arrastrando=true
 			//e.stopPropagation()
@@ -314,9 +313,9 @@ function mover(){
 			
 			botondia.value="✓"
 			botondia.disabled=false
-			botondia.onclick=botondia.ontouchstart=function(){
+			botondia.onclick=function(){
 				var temp=lista[i]
-				//e.stopPropagation()
+				e.stopPropagation()
 				ayudante.classList.remove("activo")
 				botondia.disabled=true
 				botondia.value="▶"
@@ -333,14 +332,14 @@ function mover(){
 						temp.renacuajos[j][k].setAttribute("posx", temp.posx)
 						temp.renacuajos[j][k].setAttribute("posy", temp.posy)
 					}
-				botondia.onclick=botondia.ontouchstart=dia
+				botondia.onclick=dia
         
 				for(var j=0;j<lista.length;j++)
 					lista[j].dom.onmousedown=lista[j].dom.ontouchstart=null
 				
 				document.onmousemove=document.ontouchmove=null
 				document.onmouseup=document.ontouchend=null
-				contraventana.onclick=contraventana.ontouchstart=null
+				contraventana.onclick=null
 				
 				actualizar()
 				finHabilidad()
@@ -388,20 +387,20 @@ function mover(){
 		
 	}
 	
-	contraventana.onclick=contraventana.ontouchstart=function(){
+	contraventana.onclick=function(){
 		//if(arrastrando) return
 		//console.log(e.target)
 		//e.stopPropagation()
 		botondia.value="×2"
 		botondia.disabled=false
 		ayudante.classList.remove("activo")
-		botondia.onclick=botondia.ontouchstart=function(){
+		botondia.onclick=function(){
 			botondia.disabled=true
 			botondia.value="▶"
-			botondia.onclick=botondia.ontouchstart=dia
+			botondia.onclick=dia
 			ventana.classList.add("activa")
-			ayudante.onclick=ayudante.ontouchstart=null
-			contraventana.onclick=contraventana.ontouchstart=null
+			ayudante.onclick=null
+			contraventana.onclick=null
 			document.onmousemove=document.ontouchmove=null
 			document.onmouseup=document.ontouchend=null
 			for(let i=0;i<lista.length;i++)
@@ -410,4 +409,3 @@ function mover(){
 	}
 	contraventana.onclick()
 }
-
