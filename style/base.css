@@ -109,7 +109,11 @@ body.vertical #luz[posx="2"]{left: 65vw}
 	background:CornflowerBlue;
 }
 
-.horizontal .contenedorCompra{
+#footer .contenedorColonia{
+	background:#555;
+}
+
+.horizontal .contenedorCompra, .horizontal .contenedorColonia{
 	display: flex;
 	align-items:center;
 	justify-content: center;
@@ -117,10 +121,19 @@ body.vertical #luz[posx="2"]{left: 65vw}
 	padding:1vh;
 	border-radius:9vh 4vh 4vh 9vh;
 }
-.vertical .contenedorCompra{
+
+.horizontal .contenedorColonia{
+	padding-left:5vh;
+}
+
+.vertical .contenedorCompra, .vertical .contenedorColonia{
 	margin:0.5vw;
 	padding:1vw;
 	border-radius:9vw 9vw 4vw 4vw;
+}
+
+.vertical .contenedorColonia{
+	padding-top:5vw;
 }
 
 .costeCompra{

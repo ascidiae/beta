@@ -17,7 +17,7 @@ onload=function(){
 }
 
 //////// variables !? ////////
-
+var colElegidas=[]
 var originales=[]
 var calcs=["calc(50% - 2.5cm - 5.05cm + 0.5cm)","calc(50% - 2.5cm + 0.5cm)","calc(50% - 2.5cm + 5.05cm + 0.5cm)"]
 var posluz={x:0, y:0}
@@ -79,6 +79,8 @@ function init(){
 	originales.push(ascEspeciales[5])
 	originales[9].coste=[0,0,1]
 	originales[9].clase=1
+	
+	shuffle(colonias)
 }
 
 function pantalla(){
@@ -207,6 +209,16 @@ function cargaMenu(){
 		//img.ontouchstart=empiezaArrastre
 		footer.appendChild(contenedor)
 		contenedor.appendChild(coste)
+		contenedor.appendChild(img)
+	}
+	
+	for(let i=0;i<3;i++){ //3 colonias
+		var contenedor=document.createElement("div")
+		contenedor.classList.add("contenedorColonia")
+		contenedor.index=i;
+		var img=document.createElement("img")
+		img.src=colonias[i].imagen
+		footer.appendChild(contenedor)
 		contenedor.appendChild(img)
 	}
 	

@@ -67,3 +67,16 @@ var ascEspeciales=[
 }
 ]
 
+var colonias=[
+{imagen:"img/col/40.png", coste:[0,0,4]},
+{imagen:"img/col/41.png", coste:[1,0,3]},
+{imagen:"img/col/42.png", coste:[0,1,3]},
+{imagen:"img/col/43.png", coste:[2,0,2]},
+{imagen:"img/col/44.png", coste:[1,1,2]},
+{imagen:"img/col/45.png", coste:[0,2,2]},
+{imagen:"img/col/46.png", coste:[3,0,1]},
+{imagen:"img/col/47.png", coste:[2,1,1]},
+{imagen:"img/col/48.png", coste:[1,2,1]},
+{imagen:"img/col/49.png", coste:[0,3,1]}
+]
+
