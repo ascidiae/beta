@@ -199,9 +199,9 @@ function moverAyudante(e){
 	ayudante.posy=-1
 }
 
-function girar(){
+function girar(t){
 	ventana.classList.remove("activa")
-  
+	//console.log("girando")
 	for(let i=0;i<lista.length;i++){
 		lista[i].dom.onclick=lista[i].dom.ontouchstart=function(e){
 			
@@ -223,6 +223,12 @@ function girar(){
 			botondia.disabled=false
 			botondia.onclick=botondia.ontouchstart=function(){
 				
+				
+				console.log("a comprar")
+				pagaAccion()
+				
+				////////
+				
 				e.stopPropagation()
 				ayudante.classList.remove("activo")
 				botondia.disabled=true
@@ -237,7 +243,7 @@ function girar(){
 				document.onclick=document.ontouchstart=null
 				ayudante.onclick=ayudante.ontouchstart=null
 				actualizar()
-				finHabilidad()
+				//finHabilidad()
 
 			}
 		}
@@ -251,7 +257,9 @@ function girar(){
 
 		botondia.value="✓"
 		botondia.disabled=false
-		botondia.onclick=botondia.ontouchstart=function(){
+		botondia.onclick=botondia.ontouchstart=function(e,t){
+			
+			pagaAccion()
 			
 			e.stopPropagation()
 			ayudante.classList.remove("activo")
@@ -267,7 +275,7 @@ function girar(){
 			document.onclick=document.ontouchstart=null
 			ayudante.onclick=ayudante.ontouchstart=null
 			actualizar()
-			finHabilidad()
+			//finHabilidad()
 
 		}
 
@@ -315,6 +323,7 @@ function mover(){
 			botondia.value="✓"
 			botondia.disabled=false
 			botondia.onclick=botondia.ontouchstart=function(){
+				pagaAccion()
 				var temp=lista[i]
 				//e.stopPropagation()
 				ayudante.classList.remove("activo")
@@ -343,7 +352,7 @@ function mover(){
 				contraventana.onclick=contraventana.ontouchstart=null
 				
 				actualizar()
-				finHabilidad()
+				//finHabilidad()
 			}
 		}
 	}
@@ -411,3 +420,41 @@ function mover(){
 	contraventana.onclick()
 }
 
+
+function pagaAccion(){
+	
+	var d0=pagante.renacuajos[0].length>0
+	var d1=pagante.renacuajos[1].length>0
+	var d2=pagante.renacuajos[2].length>0
+	if(d0+d1+d2>1){ //mas de un color disponible, montar ventana
+		console.log("multicolor")
+		while (ventana.firstChild)
+			ventana.removeChild(ventana.lastChild);
+
+		ventana.classList.add("activa")
+
+		var icono1=document.createElement("img")
+		var icono2=document.createElement("img")
+		var icono3=document.createElement("img")
+		
+		icono1.src="img/ico/n.png"
+		icono2.src="img/ico/t.png"
+		icono3.src="img/ico/b.png"
+
+		if(d0) ventana.appendChild(icono1)
+		if(d1) ventana.appendChild(icono2)
+		if(d2) ventana.appendChild(icono3)
+
+		icono1.onclick=icono1.ontouchstart=function(){consume(pagante,0); ventana.classList.remove("activa");finHabilidad()}
+		icono2.onclick=icono2.ontouchstart=function(){consume(pagante,1); ventana.classList.remove("activa");finHabilidad()}
+		icono3.onclick=icono3.ontouchstart=function(){consume(pagante,2); ventana.classList.remove("activa");finHabilidad()}
+
+	}
+	else{ //un solo color, cobrarlo
+		console.log("un color")
+		if(d0) consume(pagante,0)
+		if(d1) consume(pagante,1)
+		if(d2) consume(pagante,2)
+		finHabilidad()
+	}
+}

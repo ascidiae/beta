@@ -116,6 +116,9 @@ function habilis(t){
 
 function menuHabilis(t){
 	//console.log("meHa",t)
+	
+	pagante=t
+	
 	while (ventana.firstChild)
 		ventana.removeChild(ventana.lastChild);
 
