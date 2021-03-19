@@ -280,7 +280,7 @@ function mover(){
 	ventana.classList.remove("activa")
 	
 	for(let i=0;i<lista.length;i++){
-		lista[i].dom.onmousedown=function(e){
+		lista[i].dom.onmousedown=lista[i].dom.touchstart=function(e){
 			botondia.style.background="red"
 			arrastrando=true
 			e.stopPropagation()
