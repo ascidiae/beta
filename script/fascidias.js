@@ -81,8 +81,8 @@ function menuChromatica(t){
 
 	var icono1=document.createElement("img")
 	var icono2=document.createElement("img")
-	icono1.src="menosnn.png"
-	icono2.src="menostt.png"
+	icono1.src="img/ico/menosnn.png"
+	icono2.src="img/ico/menostt.png"
 	ventana.appendChild(icono1)
 	ventana.appendChild(icono2)
 
@@ -244,8 +244,8 @@ function menuVikenti(t){
 
 	var icono1=document.createElement("img")
 	var icono2=document.createElement("img")
-	icono1.src="masn.png"
-	icono2.src="menosnn.png"
+	icono1.src="img/ico/masn.png"
+	icono2.src="img/ico/menosnn.png"
 	ventana.appendChild(icono1)
 	ventana.appendChild(icono2)
   
