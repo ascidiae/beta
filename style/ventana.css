@@ -1,0 +1,83 @@
+#ventana{
+	display: none;
+	background: rgba(0,0,255,0.5);
+	z-index:100;
+	box-shadow: 2px 2px 0 rgba(0,0,128,0.5);
+}
+
+#contraventana{
+	display:flex;
+	position:absolute;
+	align-items: center;
+	justify-content: center;
+}
+
+.horizontal #contraventana{
+	width:100vh;
+	height: 100vh;
+}
+
+.vertical #contraventana{
+	width:100vw;
+	height: 100vw;
+}
+
+#ventana.activa{
+	display:flex;
+	align-items:center;
+	justify-content: center;
+}
+
+#ventana img{
+	background: white;
+	border-radius:10%;
+	box-shadow: 2px 2px 0 #00000080;
+}
+
+#ventana img:first-child{
+	border-radius:50% 10% 10% 50%;
+}
+
+#ventana img:last-child{
+	border-radius:10% 50% 50% 10%
+}
+
+.horizontal #ventana{
+	padding:1vh .8vh .8vh 1vh;
+	border-radius:6vh;
+}
+
+.vertical #ventana{
+	padding:1vw .8vw .8vw 1vw;
+	border-radius: 6vw;
+}
+
+.horizontal #ventana img{
+	height:10vh;
+	margin:.5vh;
+}
+
+.vertical #ventana img{
+	height:10vw;
+	margin:.5vh;
+}
+
+.horizontal #ventana img:first-child{
+	padding-left:1vh;
+	border-radius:5vh 10% 10% 5vh;
+}
+
+.horizontal #ventana img:last-child{
+	padding-right:1vh;
+	border-radius: 10% 5vh 5vh 10%;
+}
+
+.vertical #ventana img:first-child{
+	padding-left:1vw;
+	border-radius:5vw 10% 10% 5vw;
+}
+
+.vertical #ventana img:last-child{
+	padding-right:1vw;
+	border-radius: 10% 5vw 5vw 10%;
+}

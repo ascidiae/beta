@@ -1,0 +1,87 @@
+#bloqcorriente{
+	background-image: url("../img/tab/tab0.png");
+	background-position:top left;
+	background-repeat: no-repeat;
+}
+
+body.horizontal #bloqcorriente{
+  background-size:100vh;
+  width:100vh;
+  height:100vh;
+}
+
+body.vertical  #bloqcorriente{
+  background-size:100vw;
+  width:100vw;
+  height:100vw;
+}
+
+.ascidia{
+	position:absolute;
+	transition: all 0.5s;
+}
+
+.ascidia img{
+	position:absolute;
+	transition: all 0.5s;
+	
+}
+
+body.horizontal .ascidia img{
+	width: 25vh;
+	height: 25vh;
+	border-radius: 3.125vh;
+	box-shadow: 0 0 3.125vh black;
+}
+
+body.vertical .ascidia img{
+	width: 25vw;
+	height: 25vw;
+	border-radius: 3.125vw;
+	box-shadow: 0 0 3.125vw black;
+}
+
+body.horizontal .ascidia img[posy="0"]{top: 7.5vh}
+body.horizontal .ascidia img[posy="1"]{top: 37.5vh}
+body.horizontal .ascidia img[posy="2"]{top: 67.5vh}
+body.horizontal .ascidia img[posx="0"]{left: 7.5vh}
+body.horizontal .ascidia img[posx="1"]{left: 37.5vh}
+body.horizontal .ascidia img[posx="2"]{left: 67.5vh}
+
+body.vertical .ascidia img[posy="0"]{top: 7.5vw}
+body.vertical .ascidia img[posy="1"]{top: 37.5vw}
+body.vertical .ascidia img[posy="2"]{top: 67.5vw}
+body.vertical .ascidia img[posx="0"]{left: 7.5vw}
+body.vertical .ascidia img[posx="1"]{left: 37.5vw}
+body.vertical .ascidia img[posx="2"]{left: 67.5vw}
+
+body.horizontal img.ascidia[posy="0"]{top: 7.5vh}
+body.horizontal img.ascidia[posy="1"]{top: 37.5vh}
+body.horizontal img.ascidia[posy="2"]{top: 67.5vh}
+body.horizontal img.ascidia[posx="0"]{left: 7.5vh}
+body.horizontal img.ascidia[posx="1"]{left: 37.5vh}
+body.horizontal img.ascidia[posx="2"]{left: 67.5vh}
+
+body.vertical img.ascidia[posy="0"]{top: 7.5vw}
+body.vertical img.ascidia[posy="1"]{top: 37.5vw}
+body.vertical img.ascidia[posy="2"]{top: 67.5vw}
+body.vertical img.ascidia[posx="0"]{left: 7.5vw}
+body.vertical img.ascidia[posx="1"]{left: 37.5vw}
+body.vertical img.ascidia[posx="2"]{left: 67.5vw}
+
+#ayudante[direccion="0"], .ascidia img, .ascidia img[direccion="0"], img.ascidia[direccion="0"]{
+	transform:rotate(0deg);
+}
+
+#ayudante[direccion="1"], .ascidia img[direccion="1"], img.ascidia[direccion="1"]{
+	transform:rotate(90deg);
+}
+
+#ayudante[direccion="2"], .ascidia img[direccion="2"], img.ascidia[direccion="2"]{
+	transform:rotate(180deg);
+}
+
+#ayudante[direccion="3"], .ascidia img[direccion="3"], img.ascidia[direccion="3"]{
+	transform:rotate(270deg);
+}
+

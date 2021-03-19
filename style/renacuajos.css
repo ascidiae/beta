@@ -1,0 +1,74 @@
+#bloqcorriente .renacuajo{
+  position:absolute;
+  animation: nacer 0.5s linear;
+}
+
+.renacuajo{
+	border:1px solid black;
+	box-sizing:border-box;
+	transition:all .5s;
+	opacity:1;
+}
+
+body.horizontal .renacuajo{
+	width:3.125vh;
+	height:3.125vh;
+	border-radius:0.3125vh;
+}
+body.horizontal #bloqcorriente .renacuajo{
+	animation: baile_horizontal 6s infinite linear;
+}
+
+body.vertical .renacuajo{
+	width:3.125vw;
+	height:3.125vw;
+	border-radius:0.3125vw;
+}
+
+body.vertical #bloqcorriente .renacuajo{
+	animation: baile_vertical 6s infinite linear;
+}
+
+.renacuajo.morir{
+	opacity:0;	
+}
+
+@keyframes baile_horizontal{
+	from{transform:rotate(0deg) translate(7.5vh, 0)}
+	to{transform:rotate(360deg) translate(7.5vh, 0)}
+}
+
+@keyframes baile_vertical{
+	from{transform:rotate(0deg) translate(7.5vw, 0)}
+	to{transform:rotate(360deg) translate(7.5vw, 0)}
+}
+
+.renacuajo.negro{
+	background-color:#808080;
+}
+
+.renacuajo.naranja{
+	background-color:#ff7f2a;
+}
+
+.renacuajo.blanco{
+	background-color:#f2f2f2;
+}
+
+.renacuajo.negronaranjablanco{
+  background: linear-gradient(to top left, #808080 30%, #ff7f2a 35%, #ff7f2a 65%, #f2f2f2 70%)
+}
+
+body.horizontal .renacuajo[posy="0"]{top: 18.4375vh}
+body.horizontal .renacuajo[posy="1"]{top: 48.4375vh}
+body.horizontal .renacuajo[posy="2"]{top: 78.4375vh}
+body.horizontal .renacuajo[posx="0"]{left: 18.4375vh}
+body.horizontal .renacuajo[posx="1"]{left: 48.4375vh}
+body.horizontal .renacuajo[posx="2"]{left: 78.4375vh}
+
+body.vertical .renacuajo[posy="0"]{top: 18.4375vw}
+body.vertical .renacuajo[posy="1"]{top: 48.4375vw}
+body.vertical .renacuajo[posy="2"]{top: 78.4375vw}
+body.vertical .renacuajo[posx="0"]{left: 18.4375vw}
+body.vertical .renacuajo[posx="1"]{left: 48.4375vw}
+body.vertical .renacuajo[posx="2"]{left: 78.4375vw}
