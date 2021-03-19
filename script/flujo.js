@@ -34,17 +34,17 @@ var primeravez=true
 function dia(){
 	var elem=document.body;
 	if(primeravez){
-		toggleFullScreen()
-		primeravez=false
-	} 
+		//toggleFullScreen()
 	
-	/*if (elem.requestFullscreen) {
+	if (elem.requestFullscreen) {
 		elem.requestFullscreen();
 	} else if (elem.webkitRequestFullscreen) { 
 		elem.webkitRequestFullscreen();
 	} else if (elem.msRequestFullscreen) { 
 		elem.msRequestFullscreen();
-	}*/
+	}
+		primeravez=false
+	} 
 
 	luz.style.opacity=1;
 
