@@ -306,8 +306,9 @@ function mover(){
 				ayudante.classList.remove("activo")
 				botondia.disabled=true
 				setTimeout(function(){botondia.value="▶"},500)
+				console.log(ayudante.posx, ayudante.posy, buscaAscidia(ayudante.posx, ayudante.posy))
 				if(buscaAscidia(ayudante.posx, ayudante.posy)>=0){
-					quitaAscidia(ayudante.posx, ayudante.posy)
+					quitaAscidia(buscaAscidia(ayudante.posx, ayudante.posy))
 					
 				}
 				temp.posx=ayudante.posx
