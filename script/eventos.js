@@ -297,7 +297,7 @@ function mover(){
 	
 	for(let i=0;i<lista.length;i++){
 		lista[i].dom.onmousedown=lista[i].dom.ontouchstart=function(e){
-			botondia.style.background="red"
+			//botondia.style.background="red"
 			arrastrando=true
 			//e.stopPropagation()
 			//e.preventDefault()
