@@ -283,8 +283,8 @@ function mover(){
 		lista[i].dom.onmousedown=lista[i].dom.touchstart=function(e){
 			botondia.style.background="red"
 			arrastrando=true
-			e.stopPropagation()
-			e.preventDefault()
+			//e.stopPropagation()
+			//e.preventDefault()
 			ayudante.originx=lista[i].posx
 			ayudante.originy=lista[i].posy
 			ayudante.style=""
