@@ -108,12 +108,12 @@ function colocarAyudante(coste, e){
 				
 			}
 				
-			else
+			else{
 				for(var i=0;i<coste.length;i++)
-					for(var j=0;j<coste[i];j++){
+					for(var j=0;j<coste[i];j++)
 						consume(pagante,i)
-						finHabilidad()
-					}
+				finHabilidad()		
+			}
 			
 			///////////
 			
