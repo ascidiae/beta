@@ -30,10 +30,14 @@ function resetluz(){
 		botondia.disabled=false;
 	}, 500);
 }
-
+var primeravez=true
 function dia(){
 	var elem=document.body;
-
+	if(primeravez){
+		toggleFullScreen()
+		primeravez=false
+	} 
+	
 	/*if (elem.requestFullscreen) {
 		elem.requestFullscreen();
 	} else if (elem.webkitRequestFullscreen) { 
