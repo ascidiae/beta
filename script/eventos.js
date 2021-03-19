@@ -340,6 +340,8 @@ function mover(){
 		var t=e
 			if(e.touches)
 		t=e.touches[0]
+		e.stopPropagation()
+		e.preventDefault()
 		
 		var l=Math.min(window.innerWidth, window.innerHeight)*.3
 		var f=Math.min(window.innerWidth, window.innerHeight)/20
