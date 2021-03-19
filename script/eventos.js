@@ -1,6 +1,6 @@
 function empiezaArrastre(coste,e){
-	console.log(coste)
-	console.log(e)
+	//console.log(coste)
+	//console.log(e)
 	if(!compraActiva) return
   
 	arrastrando=true
@@ -31,9 +31,9 @@ function empiezaArrastre(coste,e){
 	contraventana.onclick=function(e){
 		e.stopPropagation()
 		e.preventDefault()
-		document.onmouseup=null
-		document.onmouseleave=null
-		document.onmousemove=null
+		document.onmouseup=document.ontouchend=null
+		document.onmouseleave=document.ontouchcancel=null
+		document.onmousemove=document.ontouchmove=null
 		ayudante.classList.remove("activo")
 		
 		botondia.value="×3"
@@ -46,9 +46,9 @@ function empiezaArrastre(coste,e){
 			ventana.classList.add("activa")
 			ayudante.onclick=null
 			contraventana.onclick=null
-			document.onmousemove=null
-			document.onmouseup=null
-			document.onmouseleave=null
+			document.onmousemove=document.ontouchmove=null
+			document.onmouseup=document.ontouchend=null
+			document.onmouseleave=document.ontouchcancel=null
 			quitarFiltros()
 		}
 		
@@ -157,8 +157,8 @@ function moverAyudante(e){
 	var t=e
 	if(e.touches)
 		t=e.touches[0]
-	else
-		e.preventDefault()
+	
+	t.preventDefault()
 	
 
 	if(!e.touches || e.touches.length==1){
