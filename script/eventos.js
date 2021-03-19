@@ -320,10 +320,10 @@ function mover(){
 				botondia.onclick=dia
         
 				for(var j=0;j<lista.length;j++)
-					lista[j].dom.onmousedown=null
+					lista[j].dom.onmousedown=lista[j].dom.ontouchstart=null
 				
-				document.onmousemove=null
-				document.onmouseup=null
+				document.onmousemove=document.ontouchmove=null
+				document.onmouseup=document.ontouchend=null
 				contraventana.onclick=null
 				
 				actualizar()
@@ -332,7 +332,7 @@ function mover(){
 		}
 	}
 	
-	document.onmousemove=function(e){
+	document.onmousemove=document.ontouchmove=function(e){
 		if(!arrastrando) return
 		//console.log("move")
 		//e.stopPropagation()
@@ -362,7 +362,7 @@ function mover(){
 				}
 	}
 	
-	document.onmouseup=function(e){
+	document.onmouseup=document.ontouchend=function(e){
 		//console.log("up")
 		arrastrando=false;
 		e.stopPropagation()
@@ -384,10 +384,10 @@ function mover(){
 			ventana.classList.add("activa")
 			ayudante.onclick=null
 			contraventana.onclick=null
-			document.onmousemove=null
-			document.onmouseup=null
+			document.onmousemove=document.ontouchmove=null
+			document.onmouseup=document.ontouchend=null
 			for(let i=0;i<lista.length;i++)
-				lista[i].dom.onmousedown=null
+				lista[i].dom.onmousedown=lista[i].dom.ontouchstart=null
 		}
 	}
 	contraventana.onclick()
