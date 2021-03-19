@@ -42,32 +42,7 @@ function empiezaArrastre(coste,e){
 		ayudante.setAttribute("direccion", ayudante.direc)
 		//console.log(ayudante.getAttribute("direccion"))
 	}
-	
-	contraventana.onclick=contraventana.ontouchstart=function(e){
-		e.stopPropagation()
-		e.preventDefault()
-		document.onmouseup=document.ontouchend=null
-		document.onmouseleave=document.ontouchcancel=null
-		document.onmousemove=document.ontouchmove=null
-		ayudante.classList.remove("activo")
-		
-		botondia.value="×3"
-		botondia.disabled=false
-		
-		botondia.onclick=botondia.ontouchstart=function(){
-			botondia.disabled=true
-			botondia.value="▶"
-			botondia.onclick=botondia.ontouchstart=dia
-			ventana.classList.add("activa")
-			ayudante.onclick=ayudante.ontouchstart=null
-			contraventana.onclick=contraventana.ontouchstart=null
-			document.onmousemove=document.ontouchmove=null
-			document.onmouseup=document.ontouchend=null
-			document.onmouseleave=document.ontouchcancel=null
-			quitarFiltros()
-		}
-		
-	}
+
 	
 	document.onmousemove=document.ontouchmove=moverAyudante
 	document.onmouseup=document.ontouchend=function(e){colocarAyudante(coste,e)}
@@ -91,7 +66,7 @@ function colocarAyudante(coste, e){
 		botondia.onclick=botondia.ontouchstart=function(){
 			ayudante.classList.remove("activo")
 			botondia.disabled=true
-			botondia.value="▶"
+			setTimeout(function(){botondia.value="▶"},500)
 			creaAscidia(ayudante.tipo, ayudante.posx, ayudante.posy, ayudante.direc)
 			
 			//// cobros
@@ -135,8 +110,10 @@ function colocarAyudante(coste, e){
 				
 			else
 				for(var i=0;i<coste.length;i++)
-					for(var j=0;j<coste[i];j++)
+					for(var j=0;j<coste[i];j++){
 						consume(pagante,i)
+						finHabilidad()
+					}
 			
 			///////////
 			
@@ -232,7 +209,7 @@ function girar(t){
 				e.stopPropagation()
 				ayudante.classList.remove("activo")
 				botondia.disabled=true
-				botondia.value="▶"
+				setTimeout(function(){botondia.value="▶"},500)
 				lista[i].dir=ayudante.direc
 				lista[i].img.setAttribute("direccion", lista[i].dir)
 				botondia.onclick=botondia.ontouchstart=dia
@@ -264,7 +241,7 @@ function girar(t){
 			e.stopPropagation()
 			ayudante.classList.remove("activo")
 			botondia.disabled=true
-			botondia.value="▶"
+			setTimeout(function(){botondia.value="▶"},500)
 			lista[buscaAscidia(ayudante.posx, ayudante.posy)].dir=ayudante.direc
 			lista[buscaAscidia(ayudante.posx, ayudante.posy)].img.setAttribute("direccion", ayudante.direc)
 			botondia.onclick=botondia.ontouchstart=dia
@@ -283,7 +260,7 @@ function girar(t){
 	
 	document.onclick=document.ontouchstart=function(e){
 		e.stopPropagation()
-		botondia.value="×1"
+		botondia.value="×"
 		botondia.disabled=false
 		botondia.onclick=botondia.ontouchstart=function(){
 			ayudante.classList.remove("activo")
@@ -291,7 +268,7 @@ function girar(t){
 			ayudante.onclick=ayudante.ontouchstart=null
 			document.onclick=document.ontouchstart=null
 			botondia.disabled=true
-			botondia.value="▶"
+			setTimeout(function(){botondia.value="▶"},500)
 			botondia.onclick=botondia.ontouchstart=dia
 
 			for(let i=0;i<lista.length;i++)
@@ -328,7 +305,7 @@ function mover(){
 				//e.stopPropagation()
 				ayudante.classList.remove("activo")
 				botondia.disabled=true
-				botondia.value="▶"
+				setTimeout(function(){botondia.value="▶"},500)
 				if(buscaAscidia(ayudante.posx, ayudante.posy)>=0){
 					quitaAscidia(ayudante.posx, ayudante.posy)
 					
@@ -401,12 +378,12 @@ function mover(){
 		//if(arrastrando) return
 		//console.log(e.target)
 		//e.stopPropagation()
-		botondia.value="×2"
+		botondia.value="×"
 		botondia.disabled=false
 		ayudante.classList.remove("activo")
 		botondia.onclick=botondia.ontouchstart=function(){
 			botondia.disabled=true
-			botondia.value="▶"
+			setTimeout(function(){botondia.value="▶"},500)
 			botondia.onclick=botondia.ontouchstart=dia
 			ventana.classList.add("activa")
 			ayudante.onclick=ayudante.ontouchstart=null
@@ -427,7 +404,7 @@ function pagaAccion(){
 	var d1=pagante.renacuajos[1].length>0
 	var d2=pagante.renacuajos[2].length>0
 	if(d0+d1+d2>1){ //mas de un color disponible, montar ventana
-		console.log("multicolor")
+		//console.log("multicolor")
 		while (ventana.firstChild)
 			ventana.removeChild(ventana.lastChild);
 
@@ -451,7 +428,7 @@ function pagaAccion(){
 
 	}
 	else{ //un solo color, cobrarlo
-		console.log("un color")
+		//console.log("un color")
 		if(d0) consume(pagante,0)
 		if(d1) consume(pagante,1)
 		if(d2) consume(pagante,2)

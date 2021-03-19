@@ -236,6 +236,32 @@ function compraAscidia(t){
 	
 	compraActiva=true;
 	
+		contraventana.onclick=contraventana.ontouchstart=function(e){
+		e.stopPropagation()
+		e.preventDefault()
+		document.onmouseup=document.ontouchend=null
+		document.onmouseleave=document.ontouchcancel=null
+		document.onmousemove=document.ontouchmove=null
+		ayudante.classList.remove("activo")
+		
+		botondia.value="×"
+		botondia.disabled=false
+		
+		botondia.onclick=botondia.ontouchstart=function(){
+			botondia.disabled=true
+			setTimeout(function(){botondia.value="▶"},500)
+			botondia.onclick=botondia.ontouchstart=dia
+			ventana.classList.add("activa")
+			ayudante.onclick=ayudante.ontouchstart=null
+			contraventana.onclick=contraventana.ontouchstart=null
+			document.onmousemove=document.ontouchmove=null
+			document.onmouseup=document.ontouchend=null
+			document.onmouseleave=document.ontouchcancel=null
+			quitarFiltros()
+		}
+		
+	}
+
 	
 }
 

@@ -13,7 +13,7 @@ html, body{
 	border-bottom-width:0;
 	position:absolute;
 	transform:translate(-50%,-100%);
-	atransition:all 0.25s;
+	transition:all 0.25s;
 }
 
 #botondia:focus{
