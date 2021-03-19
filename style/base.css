@@ -2,12 +2,11 @@ html, body{
 	padding:0;
 	margin:0;
 	height:100vh;
-	//overscroll-behavior: contain;
-	//overflow-y:hidden;
+	touch-action:none;
 }
 
 #botondia{
-	background:radial-gradient(blue, darkblue);
+	background:radial-gradient(green, darkblue);
 	border-radius:100% 100% 0 0;
 	border:1px solid black;
 	border-bottom-width:0;
