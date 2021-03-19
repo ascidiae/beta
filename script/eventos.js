@@ -281,6 +281,7 @@ function mover(){
 	
 	for(let i=0;i<lista.length;i++){
 		lista[i].dom.onmousedown=function(e){
+			botondia.style.background="red"
 			arrastrando=true
 			e.stopPropagation()
 			e.preventDefault()
