@@ -293,49 +293,66 @@ function mover(){
 			ayudante.classList.add("ascidia")
 			ayudante.setAttribute("posy",lista[i].posy)
 			ayudante.setAttribute("posx",lista[i].posx)
-			
-			ayudante.classList.add("activo")
+			//ayudante.classList.remove("activo")
+			//ayudante.classList.add("activo")
 			ayudante.src=lista[i].img.src;
 			
-			botondia.value="✓"
+			botondia.value="×"
 			botondia.disabled=false
+			ayudante.classList.remove("activo")
 			botondia.onclick=botondia.ontouchstart=function(){
-				pagaAccion()
-				var temp=lista[i]
-				//e.stopPropagation()
-				ayudante.classList.remove("activo")
 				botondia.disabled=true
 				setTimeout(function(){botondia.value="▶"},500)
-				console.log(ayudante.posx, ayudante.posy, buscaAscidia(ayudante.posx, ayudante.posy))
-				if(buscaAscidia(ayudante.posx, ayudante.posy)>=0){
-					quitaAscidia(buscaAscidia(ayudante.posx, ayudante.posy))
-					
-				}
-				temp.posx=ayudante.posx
-				temp.posy=ayudante.posy
-				temp.img.setAttribute("posx", temp.posx)
-				temp.img.setAttribute("posy", temp.posy)
-				for(var j=0;j<2;j++)
-					for(var k=0;k<temp.renacuajos[j].length;k++){
-						temp.renacuajos[j][k].setAttribute("posx", temp.posx)
-						temp.renacuajos[j][k].setAttribute("posy", temp.posy)
-					}
 				botondia.onclick=botondia.ontouchstart=dia
-        
-				for(var j=0;j<lista.length;j++)
-					lista[j].dom.onmousedown=lista[j].dom.ontouchstart=null
-				
+				ventana.classList.add("activa")
+				ayudante.onclick=ayudante.ontouchstart=null
+				contraventana.onclick=contraventana.ontouchstart=null
 				document.onmousemove=document.ontouchmove=null
 				document.onmouseup=document.ontouchend=null
-				contraventana.onclick=contraventana.ontouchstart=null
-				
-				actualizar()
-				//finHabilidad()
+				for(let i=0;i<lista.length;i++)
+					lista[i].dom.onmousedown=lista[i].dom.ontouchstart=null
 			}
+			
+			// botondia.value="✓"
+			// botondia.disabled=false
+			// botondia.onclick=botondia.ontouchstart=function(){
+				// pagaAccion()
+				// var temp=lista[i]
+				// //e.stopPropagation()
+				// ayudante.classList.remove("activo")
+				// botondia.disabled=true
+				// setTimeout(function(){botondia.value="▶"},500)
+				// console.log(ayudante.posx, ayudante.posy, buscaAscidia(ayudante.posx, ayudante.posy))
+				// if(buscaAscidia(ayudante.posx, ayudante.posy)>=0){
+					// quitaAscidia(buscaAscidia(ayudante.posx, ayudante.posy))
+					
+				// }
+				// temp.posx=ayudante.posx
+				// temp.posy=ayudante.posy
+				// temp.img.setAttribute("posx", temp.posx)
+				// temp.img.setAttribute("posy", temp.posy)
+				// for(var j=0;j<2;j++)
+					// for(var k=0;k<temp.renacuajos[j].length;k++){
+						// temp.renacuajos[j][k].setAttribute("posx", temp.posx)
+						// temp.renacuajos[j][k].setAttribute("posy", temp.posy)
+					// }
+				// botondia.onclick=botondia.ontouchstart=dia
+        
+				// for(var j=0;j<lista.length;j++)
+					// lista[j].dom.onmousedown=lista[j].dom.ontouchstart=null
+				
+				// document.onmousemove=document.ontouchmove=null
+				// document.onmouseup=document.ontouchend=null
+				// contraventana.onclick=contraventana.ontouchstart=null
+				
+				// actualizar()
+				// //finHabilidad()
+			// }
 		}
 	}
 	
 	document.onmousemove=document.ontouchmove=function(e){
+		//console.log("te gusta el mueve mueve")
 		if(!arrastrando) return
 		//console.log("move")
 		//e.stopPropagation()
@@ -363,6 +380,43 @@ function mover(){
 					ayudante.style.left=1.5*f+i*l+"px"
 					ayudante.posx=i
 					ayudante.posy=j
+					
+					botondia.value="✓"
+					botondia.disabled=false
+					botondia.onclick=botondia.ontouchstart=function(){
+						pagaAccion()
+						var temp=lista[i]
+						//e.stopPropagation()
+						ayudante.classList.remove("activo")
+						botondia.disabled=true
+						setTimeout(function(){botondia.value="▶"},500)
+						//console.log(ayudante.posx, ayudante.posy, buscaAscidia(ayudante.posx, ayudante.posy))
+						if(buscaAscidia(ayudante.posx, ayudante.posy)>=0){
+							quitaAscidia(buscaAscidia(ayudante.posx, ayudante.posy))
+							
+						}
+						temp.posx=ayudante.posx
+						temp.posy=ayudante.posy
+						temp.img.setAttribute("posx", temp.posx)
+						temp.img.setAttribute("posy", temp.posy)
+						for(var j=0;j<2;j++)
+							for(var k=0;k<temp.renacuajos[j].length;k++){
+								temp.renacuajos[j][k].setAttribute("posx", temp.posx)
+								temp.renacuajos[j][k].setAttribute("posy", temp.posy)
+							}
+						botondia.onclick=botondia.ontouchstart=dia
+				
+						for(var j=0;j<lista.length;j++)
+							lista[j].dom.onmousedown=lista[j].dom.ontouchstart=null
+						
+						document.onmousemove=document.ontouchmove=null
+						document.onmouseup=document.ontouchend=null
+						contraventana.onclick=contraventana.ontouchstart=null
+						
+						actualizar()
+						//finHabilidad()
+					}
+		
 					return
 				}
 	}

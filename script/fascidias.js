@@ -209,7 +209,13 @@ function sverk(t){
 			let temp=finHabilidad
 			finHabilidad=function(){
 				setTimeout(
-					function(){if(poblacion(t)>0) menuHabilis(t); finHabilidad=temp}
+					function(){
+						finHabilidad=temp;
+						if(poblacion(t)>0)
+							menuHabilis(t);
+						else
+						finHabilidad()
+					}
 				,125)
 			}
      

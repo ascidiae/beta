@@ -48,9 +48,13 @@ function purga(t){
 }
 
 function consume(t, color){
+	
 	var temp=t.renacuajos[color].pop()
-	temp.classList.add("morir")
-	setTimeout(function(){temp.remove()},250)
+	if(temp){
+		
+		temp.classList.add("morir")
+		setTimeout(function(){temp.remove()},250)
+	}
 }
 
 function dormir(){
