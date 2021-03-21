@@ -67,16 +67,43 @@ var ascEspeciales=[
 }
 ]
 
-var colonias=[
-{imagen:"img/col/40.png", coste:[0,0,4]},
-{imagen:"img/col/41.png", coste:[1,0,3]},
-{imagen:"img/col/42.png", coste:[0,1,3]},
-{imagen:"img/col/43.png", coste:[2,0,2]},
-{imagen:"img/col/44.png", coste:[1,1,2]},
-{imagen:"img/col/45.png", coste:[0,2,2]},
-{imagen:"img/col/46.png", coste:[3,0,1]},
-{imagen:"img/col/47.png", coste:[2,1,1]},
-{imagen:"img/col/48.png", coste:[1,2,1]},
-{imagen:"img/col/49.png", coste:[0,3,1]}
-]
+var colonias=[]
 
+var multiColonias=[
+[
+	{imagen:"img/col/40.png", coste:[0,0,4]},
+	{imagen:"img/col/41.png", coste:[1,0,3]},
+	{imagen:"img/col/42.png", coste:[0,1,3]},
+	{imagen:"img/col/43.png", coste:[2,0,2]},
+	{imagen:"img/col/44.png", coste:[1,1,2]},
+	{imagen:"img/col/45.png", coste:[0,2,2]},
+	{imagen:"img/col/46.png", coste:[3,0,1]},
+	{imagen:"img/col/47.png", coste:[2,1,1]},
+	{imagen:"img/col/48.png", coste:[1,2,1]},
+	{imagen:"img/col/49.png", coste:[0,3,1]}
+],
+[
+	{imagen:"img/col/50.png", coste:[0,1,4]},
+	{imagen:"img/col/51.png", coste:[1,1,3]},
+	{imagen:"img/col/52.png", coste:[0,2,3]},
+	{imagen:"img/col/53.png", coste:[2,1,2]},
+	{imagen:"img/col/54.png", coste:[1,2,2]},
+	{imagen:"img/col/55.png", coste:[0,3,2]},
+	{imagen:"img/col/56.png", coste:[3,1,1]},
+	{imagen:"img/col/57.png", coste:[2,2,1]},
+	{imagen:"img/col/58.png", coste:[1,3,1]},
+	{imagen:"img/col/59.png", coste:[0,4,1]}
+],
+[
+	{imagen:"img/col/60.png", coste:[1,1,4]},
+	{imagen:"img/col/61.png", coste:[2,1,3]},
+	{imagen:"img/col/62.png", coste:[1,2,3]},
+	{imagen:"img/col/63.png", coste:[3,1,2]},
+	{imagen:"img/col/64.png", coste:[2,2,2]},
+	{imagen:"img/col/65.png", coste:[1,3,2]},
+	{imagen:"img/col/66.png", coste:[4,1,1]},
+	{imagen:"img/col/67.png", coste:[3,2,1]},
+	{imagen:"img/col/68.png", coste:[2,3,1]},
+	{imagen:"img/col/69.png", coste:[1,4,1]}
+]
+]

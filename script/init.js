@@ -298,6 +298,20 @@ function cargaMenu(){
 		contenedor.appendChild(img)
 	}
 	
+	var indexColonia
+	
+	for(let i=0;i<document.formacion.selectorColonias.length;i++)
+		if(document.formacion.selectorColonias[i].checked)
+			indexColonia=i
+	console.log(indexColonia)
+	
+	shuffle(multiColonias[indexColonia])
+	
+	for(let i=0;i<3;i++) // 3 colonias
+		colonias.push({
+			imagen:multiColonias[indexColonia][i].imagen, 
+			coste:[multiColonias[indexColonia][i].coste[0],multiColonias[indexColonia][i].coste[1],multiColonias[indexColonia][i].coste[2]]})
+	
 	for(let i=0;i<3;i++){ //3 colonias
 		var contenedor=document.createElement("div")
 		contenedor.classList.add("contenedorColonia")
