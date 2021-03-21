@@ -141,7 +141,7 @@ function menuHabilis(t){
 	ventana.appendChild(icono3)
 	
 	var coloniable=false
-	for(var i=0;i<3;i++) 
+	for(var i=0;i<cantidadColonias.value;i++) 
 		if(!colonias[i].comprada && colonias[i].coste[0]<=pagante.renacuajos[0].length && colonias[i].coste[1]<=pagante.renacuajos[1].length && colonias[i].coste[2]<=pagante.renacuajos[2].length)
 			coloniable=true
 	if(coloniable)
