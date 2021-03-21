@@ -207,6 +207,8 @@ function creaAscidiasIniciales(){
 				for(var j=0;j<3;j++)
 					if(buscaAscidia(i,j)<0)
 					if(t.clientX>=(f+i*l) && t.clientX<(f+(i+1)*l) && t.clientY>=(f+j*l) && t.clientY<(f+(j+1)*l)){
+						if(window.navigator.vibrate)
+							window.navigator.vibrate(100)
 						/*ayudante.classList.add("activo")
 						ayudante.style.top=1.5*f+j*l+"px"
 						ayudante.style.left=1.5*f+i*l+"px"*/
