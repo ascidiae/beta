@@ -508,7 +508,7 @@ function comprarColonia(){
 					//console.log("comprando!", i)
 					e.stopPropagation()
 					e.preventDefault()
-					if(window.navigator.vibrate) window.navigator.vibrate(200,50,200,50,100,10,500)
+					if(window.navigator.vibrate) window.navigator.vibrate([200,50,200,50,100,10,500])
 					for(var color=0;color<3;color++){
 						
 						for(var cantidad=0;cantidad<colonias[i].coste[color];cantidad++){
