@@ -139,13 +139,19 @@ function menuHabilis(t){
 	ventana.appendChild(icono1)
 	ventana.appendChild(icono2)
 	ventana.appendChild(icono3)
-	ventana.appendChild(icono4)
+	
+	var coloniable=false
+	for(var i=0;i<3;i++) 
+		if(colonias[i].coste[0]<=pagante.renacuajos[0].length && colonias[i].coste[1]<=pagante.renacuajos[1].length && colonias[i].coste[2]<=pagante.renacuajos[2].length)
+			coloniable=true
+	if(coloniable)
+		ventana.appendChild(icono4)
 	ventana.appendChild(icono5)
 
 	icono1.onclick=icono1.ontouchstart=function(){mover(t)}
 	icono2.onclick=icono2.ontouchstart=function(){girar(t)}
 	icono3.onclick=icono3.ontouchstart=function(){comprar(t)}
-	//icono4.onclick=icono4.ontouchstart=comprarColonia
+	icono4.onclick=icono4.ontouchstart=comprarColonia
 	icono5.onclick=icono5.ontouchstart=dormir
 }
 

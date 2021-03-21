@@ -103,14 +103,26 @@ body.vertical #luz[posx="2"]{left: 65vw}
 
 #footer .contenedorCompra.basica{
 	background:tomato;
+	position:relative;
 }
 
 #footer .contenedorCompra.especial{
 	background:CornflowerBlue;
+	position:relative;
 }
 
 #footer .contenedorColonia{
-	background:#555;
+	background:green;
+	position:relative;
+}
+
+#footer .contenedorColonia.comprado{
+	background:lime;
+	position:relative;
+}
+
+#footer .contenedorColonia.comprado img{
+	opacity:0.75;
 }
 
 .horizontal .contenedorCompra, .horizontal .contenedorColonia{
@@ -218,6 +230,10 @@ body.vertical #ayudante{
 	opacity:0;
 }
 
+.horizontal .separador{
+	display:none;
+}
+
 .vertical .inicialbasica{
 	top:85vw;
 	left:20vw;
@@ -236,4 +252,28 @@ body.vertical #ayudante{
 .horizontal .inicialhabilis{
 	top:85vh;
 	left:55vh;
+}
+
+.conseguido{
+	position:absolute;
+	background:rgba(0,0,255,0.50);
+	aborder:2px solid blue;
+	color:white;
+}
+
+.horizontal .conseguido{
+	bottom:1vh;
+	right:1vh;
+	padding:2vh;
+	font-size:5vh;
+	border-radius:3vh;
+	text-shadow:0 0 4vh blue, 0 0 3vh blue, 0 0 2vh blue, 0 0 1vh blue;
+}
+.vertical .conseguido{
+	bottom:1vw;
+	right:1vw;
+	padding:2vw;
+	font-size:5vw;
+	border-radius:3vw;
+	atext-shadow:0 0 4vw blue, 0 0 3vw blue, 0 0 2vw blue, 0 0 1vw blue;
 }

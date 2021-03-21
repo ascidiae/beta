@@ -492,3 +492,53 @@ function pagaAccion(){
 		finHabilidad()
 	}
 }
+
+function comprarColonia(){
+	var contenedores=document.getElementsByClassName("contenedorColonia")
+	ventana.classList.remove("activa")
+	console.log(contenedores)
+	for(let i=0;i<3;i++){
+		if(!colonias[i].comprada)
+			if(colonias[i].coste[0]<=pagante.renacuajos[0].length && colonias[i].coste[1]<=pagante.renacuajos[1].length && colonias[i].coste[2]<=pagante.renacuajos[2].length)
+				contenedores[i].firstChild.onclick=contenedores[i].firstChild.ontouchstart=function(e){
+					console.log("comprando!", i)
+					e.stopPropagation()
+					e.preventDefault()
+					
+					for(var color=0;color<3;color++){
+						
+						for(var cantidad=0;cantidad<colonias[i].coste[color];cantidad++){
+							consume(pagante,color)
+							console.log("paga")
+							
+						}
+					}
+					
+					var cont=document.getElementsByClassName("contenedorColonia")
+					colonias[i].comprada=true;
+					
+					/////
+					
+					var conseguido=document.createElement("span")
+					conseguido.classList.add("conseguido")
+					conseguido.textContent=turno
+					cont[i].appendChild(conseguido)
+					cont[i].classList.add("comprado")
+					
+					//////
+					
+					
+					
+					for(var j=0;j<cont.length;j++) {
+						cont[j].style.filter=null
+						cont[j].firstChild.onclick=cont[j].firstChild.ontouchstart=null
+						
+					}
+					finHabilidad()
+				}
+			else{
+				//console.log()
+				contenedores[i].style.filter="brightness(75%) grayscale(100%)"
+			}
+	}
+}

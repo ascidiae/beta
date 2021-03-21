@@ -302,6 +302,13 @@ function cargaMenu(){
 		img.src=colonias[i].imagen
 		footer.appendChild(contenedor)
 		contenedor.appendChild(img)
+/*		if(i==1){			
+			var conseguido=document.createElement("span")
+			conseguido.classList.add("conseguido")
+			conseguido.textContent=123
+			contenedor.appendChild(conseguido)
+			contenedor.classList.add("comprado")
+		}*/
 	}
 	
 	var div=document.createElement("div")

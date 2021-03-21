@@ -30,8 +30,11 @@ function resetluz(){
 		botondia.disabled=false;
 	}, 500);
 }
+
 var primeravez=true
+
 function dia(){
+	//if(botondia.disabled) return
 	var elem=document.body;
 	if(primeravez){
 		//toggleFullScreen()
