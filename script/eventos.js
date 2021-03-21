@@ -496,12 +496,12 @@ function pagaAccion(){
 function comprarColonia(){
 	var contenedores=document.getElementsByClassName("contenedorColonia")
 	ventana.classList.remove("activa")
-	console.log(contenedores)
+	//console.log(contenedores)
 	for(let i=0;i<3;i++){
 		if(!colonias[i].comprada)
 			if(colonias[i].coste[0]<=pagante.renacuajos[0].length && colonias[i].coste[1]<=pagante.renacuajos[1].length && colonias[i].coste[2]<=pagante.renacuajos[2].length)
 				contenedores[i].firstChild.onclick=contenedores[i].firstChild.ontouchstart=function(e){
-					console.log("comprando!", i)
+					//console.log("comprando!", i)
 					e.stopPropagation()
 					e.preventDefault()
 					
@@ -509,7 +509,7 @@ function comprarColonia(){
 						
 						for(var cantidad=0;cantidad<colonias[i].coste[color];cantidad++){
 							consume(pagante,color)
-							console.log("paga")
+							//console.log("paga")
 							
 						}
 					}
