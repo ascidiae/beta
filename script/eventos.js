@@ -151,6 +151,7 @@ function moverAyudante(e){
 		t=e.touches[0]
 	
 	e.preventDefault()
+	e.stopPropagation()
 	
 
 	if(!e.touches || e.touches.length==1){
