@@ -163,6 +163,7 @@ function moverAyudante(e){
 		for(var i=0;i<3;i++)
 			for(var j=0;j<3;j++)
 				if(t.clientX>=(f+i*l) && t.clientX<(f+(i+1)*l) && t.clientY>=(f+j*l) && t.clientY<(f+(j+1)*l)){
+					if(window.navigator.vibrate) window.navigator.vibrate(100)
 					ayudante.classList.add("activo")
 					ayudante.style.top=1.5*f+j*l+"px"
 					ayudante.style.left=1.5*f+i*l+"px"
@@ -230,6 +231,7 @@ function girar(t){
 	ayudante.onclick=ayudante.ontouchstart=function(e){
 		e.stopPropagation()
 		e.preventDefault()
+		if(window.navigator.vibrate) window.navigator.vibrate(100)
 		ayudante.direc=(ayudante.direc+1)%4
 		ayudante.setAttribute("direccion",ayudante.direc)
 
@@ -376,6 +378,7 @@ function mover(){
 				(i==ayudante.originx-1 && j==ayudante.originy)) //izq
 				if(t.clientX>=(f+i*l) && t.clientX<(f+(i+1)*l) && t.clientY>=(f+j*l) && t.clientY<(f+(j+1)*l)){
 					//console.log(e.target)
+					if(window.navigator.vibrate) window.navigator.vibrate(100)
 					ayudante.classList.add("activo")
 					ayudante.style.top=1.5*f+j*l+"px"
 					ayudante.style.left=1.5*f+i*l+"px"
@@ -498,14 +501,14 @@ function comprarColonia(){
 	var contenedores=document.getElementsByClassName("contenedorColonia")
 	ventana.classList.remove("activa")
 	//console.log(contenedores)
-	for(let i=0;i<3;i++){
+	for(let i=0;i<cantidadColonias.value;i++){
 		if(!colonias[i].comprada)
 			if(colonias[i].coste[0]<=pagante.renacuajos[0].length && colonias[i].coste[1]<=pagante.renacuajos[1].length && colonias[i].coste[2]<=pagante.renacuajos[2].length)
 				contenedores[i].firstChild.onclick=contenedores[i].firstChild.ontouchstart=function(e){
 					//console.log("comprando!", i)
 					e.stopPropagation()
 					e.preventDefault()
-					
+					if(window.navigator.vibrate) window.navigator.vibrate(200,50,200,50,100,10,500)
 					for(var color=0;color<3;color++){
 						
 						for(var cantidad=0;cantidad<colonias[i].coste[color];cantidad++){
