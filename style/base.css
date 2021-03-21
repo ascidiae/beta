@@ -277,3 +277,59 @@ body.vertical #ayudante{
 	border-radius:3vw;
 	atext-shadow:0 0 4vw blue, 0 0 3vw blue, 0 0 2vw blue, 0 0 1vw blue;
 }
+
+#intro{
+	margin:0 auto;
+	width:75%;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:stretch;
+	position:relative;
+}
+
+#intro #tituloIntro{
+	position:relative;
+	margin:0;
+	text-align:center;
+	font-family:sans-serif;
+	font-weight:900;
+	font-size:10vh;
+	padding:0;
+	background:repeating-linear-gradient(90deg, #808080 0px, #808080 50px, #ff7f2a 50px, #ff7f2a 100px, #f2f2f2 100px, #f2f2f2 150px);
+	background-size:300px;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation:mueveFondo 2s linear infinite;
+}
+
+@keyframes mueveFondo{
+	from{background-position:0}
+	to{background-position:-300px}
+}
+
+#intro #ayudanteTitulo{
+	color: transparent;
+	margin:0;
+	text-align:center;
+	font-family:sans-serif;
+	font-weight:900;
+	font-size:10vh;
+	padding:0;
+	position:absolute;
+	text-shadow:0.5vh 0.5vh 0 black;
+	top:0;
+	left:50%;
+	transform:translate(-50%, 0);
+}
+
+#intro input[type="button"], #intro .bloqueOpciones{
+	padding:1em;
+	margin:.5ex;
+	background:#f2f2f2;
+	border-radius:2em;
+	border:none;
+	box-shadow:.25ex .25ex 0 #808080;
+}

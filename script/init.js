@@ -18,6 +18,8 @@ onload=function(){
 	actualizar()
 }
 
+
+
 //////// variables !? ////////
 var colElegidas=[]
 var originales=[]
@@ -378,4 +380,9 @@ function quitarFiltros(){
 		cc[i].imagen.onmousedown=cc[i].imagen.ontouchstart=null;
 		cc[i].style.filter=""
 	}
+}
+
+function go(){
+	intro.style.display="none"
+	juego.style.display=null
 }

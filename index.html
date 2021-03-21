@@ -11,6 +11,42 @@
 	</head>
   
 	<body>
+		<section id="intro">
+			<div id="bloqueTitulo" style="position:relative">
+				<h1 id="ayudanteTitulo">Ascidiae</h1>
+				<h1 id="tituloIntro">Ascidiae</h1>
+			</div>
+			<div class="bloqueOpciones">
+				<input type="radio" name="selectorColonias" value="colonia4" id="colonia4">
+				<label for="colonia4">Colonias sencillas</label>
+				<br>
+				<input type="radio" name="selectorColonias" value="colonia5" id="colonia5" checked>
+				<label for="colonia5">Colonias normales</label>
+				<br>
+				<input type="radio" name="selectorColonias" value="colonia6" id="colonia6">
+				<label for="colonia6">Colonias complicadas</label>
+			</div>
+			<div class="bloqueOpciones">
+				<input type="radio" name="selectorAscidias" value="partida1" id="partida1" checked>
+				<label for="partida1">Primera partida</label>
+				<br>
+				<input type="radio" name="selectorAscidias" value="partidaR" id="partidaR">
+				<label for="partidaR">Primera partida REMIX</label>
+				<br>
+				<input type="radio" name="selectorAscidias" value="partida2" id="partida2" disabled>
+				<label for="partida2">Segunda partida</label>
+				<br>
+				<input type="radio" name="selectorAscidias" value="partidaZ" id="partidaZ">
+				<label for="partidaZ">Al azar</label>
+			</div>
+			
+				<input type="button" value="Pantalla completa" onclick="toggleFullScreen()">
+			
+			
+				<input type="button" value="Jugar" onclick="go()">
+			
+		</section>
+		<section id="juego" style="display:none">
 		<div id="contraventana">
 			<div id="ventana"></div>
 		</div>
@@ -25,6 +61,8 @@
 		<div id="footer"></div>
 		
 		<img id="ayudante">
+		</section>
+		<section id="outro"></section>
 		
 		<script src="script\ascidias.js"></script>
 		<script src="script\base.js"></script>

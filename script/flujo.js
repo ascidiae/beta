@@ -31,15 +31,15 @@ function resetluz(){
 	}, 500);
 }
 
-var primeravez=true
+//var primeravez=true
 
 function dia(){
 	//if(botondia.disabled) return
-	var elem=document.body;
-	if(primeravez){
+	//var elem=document.body;
+	//if(primeravez){
 		//toggleFullScreen()
 	
-	if (elem.requestFullscreen) {
+	/*if (elem.requestFullscreen) {
 		elem.requestFullscreen();
 	} else if (elem.webkitRequestFullscreen) { 
 		elem.webkitRequestFullscreen();
@@ -47,7 +47,7 @@ function dia(){
 		elem.msRequestFullscreen();
 	}
 		primeravez=false
-	} 
+	} */
 
 	luz.style.opacity=1;
 

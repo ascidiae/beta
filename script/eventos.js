@@ -541,4 +541,21 @@ function comprarColonia(){
 				contenedores[i].style.filter="brightness(75%) grayscale(100%)"
 			}
 	}
+	/*document.onclick=document.ontouchstart=function(){
+		botondia.value="×"
+		botondia.disabled=false
+		//ayudante.classList.remove("activo")
+		botondia.onclick=botondia.ontouchstart=function(){
+			botondia.disabled=true
+			setTimeout(function(){botondia.value="▶"},500)
+			botondia.onclick=botondia.ontouchstart=dia
+			ventana.classList.add("activa")
+			ayudante.onclick=ayudante.ontouchstart=null
+			contraventana.onclick=contraventana.ontouchstart=null
+			document.onmousemove=document.ontouchmove=null
+			document.onmouseup=document.ontouchend=null
+			for(let i=0;i<lista.length;i++)
+				lista[i].dom.onmousedown=lista[i].dom.ontouchstart=null
+		}
+	}*/
 }
