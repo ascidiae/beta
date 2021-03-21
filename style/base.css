@@ -217,3 +217,23 @@ body.vertical #ayudante{
 	background:red;
 	opacity:0;
 }
+
+.vertical .inicialbasica{
+	top:85vw;
+	left:20vw;
+}
+
+.horizontal .inicialbasica{
+	top:85vh;
+	left:20vh;
+}
+
+.vertical .inicialhabilis{
+	top:85vw;
+	left:55vw;
+}
+
+.horizontal .inicialhabilis{
+	top:85vh;
+	left:55vh;
+}

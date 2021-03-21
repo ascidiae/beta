@@ -374,7 +374,7 @@ function mover(){
 				(i==ayudante.originx && j==ayudante.originy+1) || //abajo
 				(i==ayudante.originx-1 && j==ayudante.originy)) //izq
 				if(t.clientX>=(f+i*l) && t.clientX<(f+(i+1)*l) && t.clientY>=(f+j*l) && t.clientY<(f+(j+1)*l)){
-					console.log(e.target)
+					//console.log(e.target)
 					ayudante.classList.add("activo")
 					ayudante.style.top=1.5*f+j*l+"px"
 					ayudante.style.left=1.5*f+i*l+"px"
@@ -386,7 +386,7 @@ function mover(){
 					botondia.onclick=botondia.ontouchstart=function(){
 						pagaAccion()
 						var temp=lista[buscaAscidia(e.target.getAttribute("posx"), e.target.getAttribute("posy"))]
-						console.log(temp)
+						//console.log(temp)
 						//e.stopPropagation()
 						ayudante.classList.remove("activo")
 						botondia.disabled=true

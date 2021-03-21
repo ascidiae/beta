@@ -11,6 +11,8 @@ onresize=function(){
 onload=function(){
 	init()
 	pantalla()
+	botondia.style.display="none"
+	botondia.disabled=true;
 	creaAscidiasIniciales()
 	cargaMenu()
 	actualizar()
@@ -35,7 +37,7 @@ var renacuajo_bradius
 var renacuajo_avance
 var sufijo
 var casilla_coord
-
+var turno=1
 var compraActiva=false
 var arrastrando=false
 //////////////////////////////
@@ -122,42 +124,122 @@ function actualizar(){
 function creaAscidiasIniciales(){
 	var a=document.createElement("div")
 	a.classList.add("ascidia")
-	var img=document.createElement("img")
-	img.src=ascProprias[0].img;
-	img.setAttribute("posx",0);
-	img.setAttribute("posy",0);
-	a.appendChild(img)
+	var img1=document.createElement("img")
+	var img2=document.createElement("img")
+	img1.src=ascProprias[0].img;
+	img1.setAttribute("posx",-1);
+	img1.setAttribute("posy",-1);
+	img1.classList.add("inicialbasica")
+	a.appendChild(img1)
 	var temp={
 		habilidad:ascProprias[0].habilidad,
-		posx:0,
-		posy:0,
+		posx:-1,
+		posy:-1,
 		dir:0,
 		renacuajos:[[],[],[]],
 		dom:a,
-		img:img
+		img:img1
 	}
+	img1.padre=temp
 	lista.push(temp)
 	ascidias.appendChild(a)
 
 	a=document.createElement("div")
 	a.classList.add("ascidia")
-	img=document.createElement("img")
-	img.src=ascProprias[1].img;
-	img.setAttribute("posx",1);
-	img.setAttribute("posy",0);
-	a.appendChild(img)
+	img2=document.createElement("img")
+	img2.src=ascProprias[1].img;
+	img2.setAttribute("posx",-1);
+	img2.setAttribute("posy",-1);
+	img2.classList.add("inicialhabilis")
+	a.appendChild(img2)
 	temp={
 		habilidad:ascProprias[1].habilidad,
-		posx:1,
-		posy:0,
+		posx:-1,
+		posy:-1,
 		dir:0,
 		renacuajos:[[],[],[]],
 		dom:a,
-		img:img
+		img:img2
 	}
+	img2.padre=temp
 	lista.push(temp)
 	ascidias.appendChild(a)
+	
+	img1.onmousedown=img1.ontouchstart=img2.onmousedown=img2.ontouchstart=function(e){
+		e.preventDefault()
+		e.stopPropagation()
+		
+		lista[0].img.onmouseup=lista[0].img.ontouchend=lista[1].img.onmouseup=lista[1].img.ontouchend=function(){
+			e.preventDefault()
+			e.stopPropagation()
+			var t=e
+			if(e.touches)
+				t=e.touches[0]
+			
+			//console.log("entro aqui")
+			if(t.target.moviendo)
+				t.target.moviendo=false
+			else{
+				
+			t.target.padre.dir++
+			t.target.padre.dir=((t.target.padre.dir%4)+4)%4
+			t.target.setAttribute("direccion", t.target.padre.dir)
+			}
+			
+		}
+		
+		document.onmousemove=document.ontouchmove=function(e){
+			
+			e.preventDefault()
+			e.stopPropagation()
+			var t=e
+			if(e.touches)
+				t=e.touches[0]
+			//console.log("mueve", t.target)
+			t.target.moviendo=true
+				
+			var l=Math.min(window.innerWidth, window.innerHeight)*.3
+			var f=Math.min(window.innerWidth, window.innerHeight)/20
+			//console.log(t.clientX, t.clientY)
+			for(var i=0;i<3;i++)
+				for(var j=0;j<3;j++)
+					if(buscaAscidia(i,j)<0)
+					if(t.clientX>=(f+i*l) && t.clientX<(f+(i+1)*l) && t.clientY>=(f+j*l) && t.clientY<(f+(j+1)*l)){
+						/*ayudante.classList.add("activo")
+						ayudante.style.top=1.5*f+j*l+"px"
+						ayudante.style.left=1.5*f+i*l+"px"*/
+						
+						t.target.setAttribute("posx", i)
+						t.target.setAttribute("posy", j)
+						t.target.padre.posx=i
+						t.target.padre.posy=j
+						t.target.classList.remove("inicialbasica", "inicialhabilis")
+						t.target.colocada=true
+						//ayudante.posx=i
+						//ayudante.posy=j
+						return
+					}
+		}
+		document.onmouseup=document.ontouchend=function(){
+			document.onmousemove=document.ontouchmove=null
+			lista[0].img.moviendo=lista[1].img.moviendo=false
+			if(lista[0].img.colocada && lista[1].img.colocada){
+				botondia.style.display=null
+				botondia.onclick=botondia.ontouchstart=function(){
+					lista[0].img.onmousedown=lista[0].img.ontouchstart=lista[1].img.onmousedown=lista[1].img.ontouchstart=null
+					lista[0].img.onmouseup=lista[0].img.ontouchend=lista[1].img.onmouseup=lista[1].img.ontouchend=null
+					document.onmouseup=document.ontouchend=null
+					botondia.onclick=botondia.ontouchstart=dia
+				}
+				botondia.disabled=false
+				
+				//console.log("las dos, activa el boton!") //al activar el boton quitar img1.ontouchstart, img1.onmousedown, img2..., img2..., document mouseup, document touchend
+			}
+		}
+	}
 }
+
+
 
 function cargaMenu(){
 	for(let i=0;i<originales.length;i++){
@@ -253,7 +335,7 @@ function compraAscidia(t){
 	
 	compraActiva=true;
 	
-		contraventana.onclick=contraventana.ontouchstart=function(e){
+	contraventana.onclick=contraventana.ontouchstart=function(e){
 		e.stopPropagation()
 		e.preventDefault()
 		document.onmouseup=document.ontouchend=null

@@ -23,7 +23,7 @@ function corriente(){
 function resetluz(){
 	posluz={x:0, y:0}
 	luz.style.opacity=0;
-
+	turno++;
 	setTimeout(function(){
 		luz.setAttribute("posx",0)
 		luz.setAttribute("posy",0)
