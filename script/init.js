@@ -299,7 +299,12 @@ function cargaMenu(){
 	}
 	
 	var indexColonia=document.formacion.selectorColonias.value
-
+	
+	if(cantidadColonias.value>0 && cantidadColonias.value<=10)
+		cantidadColonias.value=Math.floor(cantidadColonias.value)
+	else
+		cantidadColonias.value=3
+		
 	//console.log(indexColonia)
 	
 	shuffle(multiColonias[indexColonia])
