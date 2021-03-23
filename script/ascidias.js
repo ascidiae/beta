@@ -36,9 +36,14 @@ var ascBasicas=[
 
 var ascEspeciales=[
 {
-	//limpida
-	img:"img/asc/limpida.png",
-	habilidad:function(){limpida(this)}
+	//mariensis
+	img:"img/asc/mariensis.png",
+	habilidad:function(){mariensis(this)}
+},
+{
+	//vikenti
+	img:"img/asc/vikenti.png",
+	habilidad:function(){vikenti(this)}
 },
 {
 	//magnus
@@ -46,24 +51,19 @@ var ascEspeciales=[
 	habilidad:function(){magnus(this)}
 },
 {
-	//mariensis
-	img:"img/asc/mariensis.png",
-	habilidad:function(){mariensis(this)}
-},
-{
 	//rostellaria
 	img:"img/asc/rostellaria.png",
 	habilidad:function(){rostellaria(this)}
 },
 {
+	//limpida
+	img:"img/asc/limpida.png",
+	habilidad:function(){limpida(this)}
+},
+{
 	//sverk
 	img:"img/asc/sverk.png",
 	habilidad:function(){sverk(this)}
-},
-{
-	//vikenti
-	img:"img/asc/vikenti.png",
-	habilidad:function(){vikenti(this)}
 }
 ]
 
