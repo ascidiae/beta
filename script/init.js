@@ -123,6 +123,8 @@ function actualizar(){
 	}
 }
 
+var quienArrastro=null
+
 function creaAscidiasIniciales(){
 	var a=document.createElement("div")
 	a.classList.add("ascidia")
@@ -170,7 +172,12 @@ function creaAscidiasIniciales(){
 	img1.onmousedown=img1.ontouchstart=img2.onmousedown=img2.ontouchstart=function(e){
 		e.preventDefault()
 		e.stopPropagation()
-		
+
+		if(e.touches)
+			quienArrastro=e.touches[0].target
+		else
+			quienArrastro=e.target
+			
 		lista[0].img.onmouseup=lista[0].img.ontouchend=lista[1].img.onmouseup=lista[1].img.ontouchend=function(){
 			e.preventDefault()
 			e.stopPropagation()
@@ -179,13 +186,13 @@ function creaAscidiasIniciales(){
 				t=e.touches[0]
 			
 			//console.log("entro aqui")
-			if(t.target.moviendo)
-				t.target.moviendo=false
+			if(quienArrastro.moviendo)
+				quienArrastro.moviendo=false
 			else{
 				
-			t.target.padre.dir++
-			t.target.padre.dir=((t.target.padre.dir%4)+4)%4
-			t.target.setAttribute("direccion", t.target.padre.dir)
+			quienArrastro.padre.dir++
+			quienArrastro.padre.dir=((quienArrastro.padre.dir%4)+4)%4
+			quienArrastro.setAttribute("direccion", quienArrastro.padre.dir)
 			}
 			
 		}
@@ -198,7 +205,7 @@ function creaAscidiasIniciales(){
 			if(e.touches)
 				t=e.touches[0]
 			//console.log("mueve", t.target)
-			t.target.moviendo=true
+			quienArrastro.moviendo=true
 				
 			var l=Math.min(window.innerWidth, window.innerHeight)*.3
 			var f=Math.min(window.innerWidth, window.innerHeight)/20
@@ -212,13 +219,13 @@ function creaAscidiasIniciales(){
 						/*ayudante.classList.add("activo")
 						ayudante.style.top=1.5*f+j*l+"px"
 						ayudante.style.left=1.5*f+i*l+"px"*/
-						
-						t.target.setAttribute("posx", i)
-						t.target.setAttribute("posy", j)
-						t.target.padre.posx=i
-						t.target.padre.posy=j
-						t.target.classList.remove("inicialbasica", "inicialhabilis")
-						t.target.colocada=true
+						//console.log(quienArrastro, quienArrastro.padre)
+						quienArrastro.setAttribute("posx", i)
+						quienArrastro.setAttribute("posy", j)
+						quienArrastro.padre.posx=i
+						quienArrastro.padre.posy=j
+						quienArrastro.classList.remove("inicialbasica", "inicialhabilis")
+						quienArrastro.colocada=true
 						//ayudante.posx=i
 						//ayudante.posy=j
 						return
