@@ -58,7 +58,8 @@ function init(){
 		originales[i].clase=0
 	}
 
-	shuffle(ascEspeciales)
+	if(document.formacion.selectorAscidias.value!=0)
+		shuffle(ascEspeciales)
 
 	originales.push(ascEspeciales[0])
 	originales[4].coste=[1,0,0]
