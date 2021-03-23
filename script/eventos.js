@@ -525,19 +525,28 @@ function comprarColonia(){
 					
 					var conseguido=document.createElement("span")
 					conseguido.classList.add("conseguido")
-					conseguido.textContent=turno
+					conseguido.textContent="☀"+turno
 					cont[i].appendChild(conseguido)
 					cont[i].classList.add("comprado")
 					
 					//////
 					
 					
-					
+					var todas=true
 					for(var j=0;j<cont.length;j++) {
 						cont[j].style.filter=null
 						cont[j].firstChild.onclick=cont[j].firstChild.ontouchstart=null
-						
+						if(!colonias[j].comprada)
+							todas=false
 					}
+					
+					if(todas){
+						juego.style.display="none"
+						outro.style.display="flex"
+						estadisticas.textContent="En ☀"+turno+" turnos"
+					}
+						
+					
 					finHabilidad()
 				}
 			else{

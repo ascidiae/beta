@@ -56,7 +56,8 @@ body.vertical #bloqcorriente .renacuajo{
 }
 
 .renacuajo.negronaranjablanco{
-  background: linear-gradient(to top left, #808080 30%, #ff7f2a 35%, #ff7f2a 65%, #f2f2f2 70%)
+	background: linear-gradient(to top left, #808080 30%, #ff7f2a 35%, #ff7f2a 65%, #f2f2f2 70%);
+
 }
 
 body.horizontal .renacuajo[posy="0"]{top: 18.4375vh}
