@@ -9,7 +9,7 @@ onresize=function(){
 }
 
 onload=function(){
-	init()
+	//init()
 	pantalla()
 	botondia.style.display="none"
 	botondia.disabled=true;
@@ -58,6 +58,7 @@ function init(){
 		originales[i].clase=0
 	}
 
+	console.log("AAA"+document.formacion.selectorAscidias.value)
 	if(document.formacion.selectorAscidias.value!=0)
 		shuffle(ascEspeciales)
 
@@ -127,6 +128,8 @@ function actualizar(){
 var quienArrastro=null
 
 function creaAscidiasIniciales(){
+	
+	
 	var a=document.createElement("div")
 	a.classList.add("ascidia")
 	var img1=document.createElement("img")
@@ -254,6 +257,7 @@ function creaAscidiasIniciales(){
 
 
 function cargaMenu(){
+	init()
 	for(let i=0;i<originales.length;i++){
 		var contenedor=document.createElement("div")
 		contenedor.classList.add("contenedorCompra")
