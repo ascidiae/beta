@@ -48,7 +48,7 @@ function dia(){
 	}
 		primeravez=false
 	} */
-
+	console.log("dia funcionando")
 	luz.style.opacity=1;
 
 	var actual=buscaAscidia(posluz.x, posluz.y)

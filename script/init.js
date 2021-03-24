@@ -241,10 +241,12 @@ function creaAscidiasIniciales(){
 			if(lista[0].img.colocada && lista[1].img.colocada){
 				botondia.style.display=null
 				botondia.onclick=botondia.ontouchstart=function(){
+					botondia.value="▶"
 					lista[0].img.onmousedown=lista[0].img.ontouchstart=lista[1].img.onmousedown=lista[1].img.ontouchstart=null
 					lista[0].img.onmouseup=lista[0].img.ontouchend=lista[1].img.onmouseup=lista[1].img.ontouchend=null
 					document.onmouseup=document.ontouchend=null
 					botondia.onclick=botondia.ontouchstart=dia
+					console.log("dia activado")
 				}
 				botondia.disabled=false
 				
