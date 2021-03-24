@@ -58,7 +58,7 @@ function init(){
 		originales[i].clase=0
 	}
 
-	console.log("AAA"+document.formacion.selectorAscidias.value)
+	//console.log("AAA"+document.formacion.selectorAscidias.value)
 	if(document.formacion.selectorAscidias.value!=0)
 		shuffle(ascEspeciales)
 
