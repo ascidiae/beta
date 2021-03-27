@@ -27,6 +27,7 @@ function resetluz(){
 	setTimeout(function(){
 		luz.setAttribute("posx",0)
 		luz.setAttribute("posy",0)
+		botondia.onclick=botondia.ontouchstart=dia;
 		botondia.disabled=false;
 	}, 500);
 }
@@ -34,6 +35,7 @@ function resetluz(){
 //var primeravez=true
 
 function dia(){
+	botondia.onclick=botondia.ontouchstart=null;
 	//if(botondia.disabled) return
 	//var elem=document.body;
 	//if(primeravez){

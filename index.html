@@ -18,7 +18,7 @@
 				<h1 id="tituloIntro">Ascidiae</h1>
 			</div>
 			<form name="formacion">
-			<div class="bloqueOpciones">
+			<div class="bloqueOpciones" style="display:none">
 				<label for="cantidadColonias">Cantidad de colonias </label>
 				<input type="number" min="1" max="10" value="3" id="cantidadColonias">
 				<label for="cantidadColonias"> 1-10</label>
@@ -26,15 +26,15 @@
 			</div>
 			<div class="bloqueOpciones">
 				<input type="radio" name="selectorColonias" value="0" id="colonia4">
-				<label for="colonia4">Colonias sencillas</label>
+				<label for="colonia4">Fun (Easy)</label>
 				<br>
 				<input type="radio" name="selectorColonias" value="1" id="colonia5" checked>
-				<label for="colonia5">Colonias normales</label>
+				<label for="colonia5">Tricky (Medium)</label>
 				<br>
 				<input type="radio" name="selectorColonias" value="2" id="colonia6">
-				<label for="colonia6">Colonias complicadas</label>
+				<label for="colonia6">Mayhem (Hard)</label>
 			</div>
-			<div class="bloqueOpciones">
+			<div class="bloqueOpciones"  style="display:none">
 				<input type="radio" name="selectorAscidias" value="0" id="partida1" checked>
 				<label for="partida1">Primera partida</label>
 				<br>
@@ -49,10 +49,34 @@
 			</div>
 			</form>
 			
-				<input type="button" value="Pantalla completa" onclick="toggleFullScreen()">
+				<input type="button" value="Full screen" onclick="toggleFullScreen()">
 			
 			
-				<input type="button" value="Jugar" onclick="go()">
+				<input type="button" value="Play" onclick="go()" style="font-size:200%">
+			<br>
+			<div class="bloqueOpciones"></div>
+			<br>
+			<div  class="bloqueOpciones">
+				<li>
+				<a href="pnp.pdf" target="_blank">PNP</a>
+				</li>
+			</div>
+			<div class="bloqueOpciones">
+				<li>
+				<a href="rules_en.pdf" target="_blank">English rules</a>
+				</li>
+				<li>
+				<a href="sheet_en.pdf" target="_blank">Showcase sheet</a>
+				</li>
+			</div>
+			<div  class="bloqueOpciones">
+				<li>
+				<a href="rules_es.pdf" target="_blank">Reglas en español</a>
+				</li>
+				<li>
+				<a href="sheet_es.pdf" target="_blank">Hoja de presentación</a>
+				</li>
+			</div>
 			
 		</section>
 		<section id="juego" style="display:none">
