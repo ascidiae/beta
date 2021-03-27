@@ -25,34 +25,39 @@
 
 			</div>
 			<div class="bloqueOpciones">
+				<label for="colonia4">
 				<input type="radio" name="selectorColonias" value="0" id="colonia4">
-				<label for="colonia4">Fun (Easy)</label>
-				<br>
+				Fun (Easy)</label>
+				-
+				<label for="colonia5">
 				<input type="radio" name="selectorColonias" value="1" id="colonia5" checked>
-				<label for="colonia5">Tricky (Medium)</label>
-				<br>
+				Tricky (Medium)</label>
+				-
+				<label for="colonia6">
 				<input type="radio" name="selectorColonias" value="2" id="colonia6">
-				<label for="colonia6">Mayhem (Hard)</label>
+				Mayhem (Hard)</label>
 			</div>
-			<div class="bloqueOpciones"  style="display:none">
+			<div class="bloqueOpciones" >
+				<label for="partida1">
 				<input type="radio" name="selectorAscidias" value="0" id="partida1" checked>
-				<label for="partida1">Primera partida</label>
-				<br>
+				1st game</label>
+				-
+				<label for="partidaR">
 				<input type="radio" name="selectorAscidias" value="1" id="partidaR">
-				<label for="partidaR">Primera partida REMIX</label>
-				<br>
-				<input type="radio" name="selectorAscidias" value="2" id="partida2" disabled>
-				<label for="partida2">Segunda partida</label>
-				<br>
-				<input type="radio" name="selectorAscidias" value="3" id="partidaZ">
-				<label for="partidaZ">Al azar</label>
+				1st game REMIX</label>
+				<!-- <br> -->
+				<!-- <input type="radio" name="selectorAscidias" value="2" id="partida2" disabled> -->
+				<!-- <label for="partida2">Segunda partida</label> -->
+				<!-- <br> -->
+				<!-- <input type="radio" name="selectorAscidias" value="3" id="partidaZ"> -->
+				<!-- <label for="partidaZ">Al azar</label> -->
 			</div>
 			</form>
 			
-				<input type="button" value="Full screen" onclick="toggleFullScreen()">
+				<!-- <input type="button" value="Full screen" onclick="toggleFullScreen()"> -->
 			
 			
-				<input type="button" value="Play" onclick="go()" style="font-size:200%">
+				<input type="button" value="Play" onclick="toggleFullScreen();go()" style="font-size:200%">
 			<br>
 			<div class="bloqueOpciones"></div>
 			<br>
