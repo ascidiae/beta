@@ -439,5 +439,5 @@ function cargaOpciones(){
 	if(asc) 
 		document.formacion.selectorAscidias.value=asc
 	else
-		document.formacion.selectorColonias.value=0
+		document.formacion.selectorAscidias.value=0
 }
