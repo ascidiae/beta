@@ -64,6 +64,36 @@ var ascEspeciales=[
 	//sverk
 	img:"img/asc/sverk.png",
 	habilidad:function(){sverk(this)}
+},
+{
+	//arctica
+	img:"img/asc/arctica.png",
+	habilidad:function(){arctica(this)}
+}/*,
+{
+	//chordata
+	img:"img/asc/chordata.png",
+	habilidad:function(){chordata(this)}
+}*/,
+{
+	//colectiva
+	img:"img/asc/collectiva.png",
+	habilidad:function(){collectiva(this)}
+},
+{
+	//iota
+	img:"img/asc/iota.png",
+	habilidad:function(){iota(this)}
+},
+{
+	//retinens
+	img:"img/asc/retinens.png",
+	habilidad:function(){retinens(this)}
+},
+{
+	//turbida
+	img:"img/asc/turbida.png",
+	habilidad:function(){turbida(this)}
 }
 ]
 

@@ -276,3 +276,287 @@ function menuVikenti(t){
 		ventana.classList.remove("activa")
 	}
 }
+
+function arctica(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[2].length>=1){
+			menuArctica(t)
+			return
+		}
+    }
+	
+	finHabilidad()
+}
+
+function menuArctica(t){
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+	icono1.src="img/ico/masnnt.png"
+	icono2.src="img/ico/masntt.png"
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+  
+	icono1.onclick=function(){
+		consume(t,2)
+		cria(t,0)
+		cria(t,0)
+		cria(t,1)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		consume(t,2)
+		cria(t, 0)
+		cria(t, 1)
+		cria(t, 1)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+}
+
+function iota(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[1].length>=1){
+			menuIota(t)
+			return
+		}
+    }
+	
+	finHabilidad()
+}
+			
+function menuIota(t){
+	
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+	var icono3=document.createElement("img")
+	icono1.src="img/ico/masnn.png"
+	icono2.src="img/ico/masnt.png"
+	icono3.src="img/ico/mastt.png"
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+	ventana.appendChild(icono3)
+  
+	icono1.onclick=function(){
+		consume(t,1)
+		cria(t,0)
+		cria(t,0)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		consume(t,1)
+		cria(t, 0)
+		cria(t, 1)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+
+	icono3.onclick=function(){
+		consume(t,1)
+		cria(t, 1)
+		cria(t, 1)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+}
+
+function turbida(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[1].length>=3){
+			menuTurbida(t)
+			return
+		}
+    }
+	
+	finHabilidad()
+}
+			
+function menuTurbida(t){
+	
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+	var icono3=document.createElement("img")
+	icono1.src="img/ico/masnn.png"
+	icono2.src="img/ico/masnb.png"
+	icono3.src="img/ico/masbb.png"
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+	ventana.appendChild(icono3)
+  
+	icono1.onclick=function(){
+		consume(t,1)
+		consume(t,1)
+		consume(t,1)
+		cria(t,0)
+		cria(t,0)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		consume(t,1)
+		consume(t,1)
+		consume(t,1)
+		cria(t, 0)
+		cria(t, 2)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		setTimeout(function(){empuja(t, 2, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+
+	icono3.onclick=function(){
+		consume(t,1)
+		consume(t,1)
+		consume(t,1)
+		cria(t, 2)
+		cria(t, 2)
+		setTimeout(function(){empuja(t, 2, 1)},250)
+		setTimeout(function(){empuja(t, 2, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+}
+
+function retinens(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		menuRetinens(t)
+		return
+    }
+	
+	finHabilidad()
+}
+
+function menuRetinens(t){
+	
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+
+	icono1.src="img/ico/masnn.png"
+	icono2.src="img/ico/empujatodo.png"
+
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+  
+	icono1.onclick=function(){
+		cria(t,0)
+		cria(t,0)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		//setTimeout(function(){empuja(t, 0, 1)},250)
+		empujaTodo(t, 0, 1)
+		empujaTodo(t, 1, 1)
+		empujaTodo(t, 2, 1)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+}
+
+function collectiva(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[0].length>=3){
+			menuCollectiva(t)
+			return
+		}
+		else{
+			for(var i=t.renacuajos[0].length;i>0;i--){
+				consume(t,0)
+			}
+		}
+    }
+	
+	finHabilidad()
+}
+	
+function menuCollectiva(t){
+	
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+
+	icono1.src="img/ico/menosnnn.png"
+	icono2.src="img/ico/menostodon.png"
+
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+  
+	icono1.onclick=function(){
+		consume(t,0)
+		consume(t,0)
+		consume(t,0)
+		cria(t,1)
+		cria(t,2)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		setTimeout(function(){empuja(t, 2, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		//setTimeout(function(){empuja(t, 0, 1)},250)
+		for(var i=t.renacuajos[0].length;i>0;i--){
+				consume(t,0)
+			}
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+}
