@@ -17,40 +17,42 @@
 				<h1 id="ayudanteTitulo">Ascidiae</h1>
 				<h1 id="tituloIntro">Ascidiae</h1>
 			</div>
-			<form name="formacion">
+			<form name="formacion" style="display:flex;">
 			<div class="bloqueOpciones" style="display:none">
 				<label for="cantidadColonias">Cantidad de colonias </label>
 				<input type="number" min="1" max="10" value="3" id="cantidadColonias">
 				<label for="cantidadColonias"> 1-10</label>
 
 			</div>
-			<div class="bloqueOpciones">
+			<div class="bloqueOpciones" style="display:flex;flex-direction:column;justify-content:center;">
 				<label for="colonia4">
 				<input type="radio" name="selectorColonias" value="0" id="colonia4">
 				Fun (Easy)</label>
-				-
+				
 				<label for="colonia5">
 				<input type="radio" name="selectorColonias" value="1" id="colonia5">
 				Tricky (Medium)</label>
-				-
+				
 				<label for="colonia6">
 				<input type="radio" name="selectorColonias" value="2" id="colonia6">
 				Mayhem (Hard)</label>
 			</div>
-			<div class="bloqueOpciones" >
+			<div class="bloqueOpciones" style="display:flex;flex-direction:column;justify-content:center;" >
 				<label for="partida1">
 				<input type="radio" name="selectorAscidias" value="0" id="partida1">
 				1st game</label>
-				<br>
+				
 				<label for="partidaR">
 				<input type="radio" name="selectorAscidias" value="1" id="partidaR">
-				1st game REMIX</label>
-				<br>
+				1st REMIX</label>
+				
+				<label for="partida2">
 				<input type="radio" name="selectorAscidias" value="2" id="partida2" disabled>
-				<label for="partida2">Segunda partida</label>
-				<br>
+				2nd game</label>
+				
+				<label for="partidaZ">
 				<input type="radio" name="selectorAscidias" value="3" id="partidaZ">
-				<label for="partidaZ">Al azar</label>
+				Random</label>
 			</div>
 			</form>
 			
