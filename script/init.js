@@ -9,6 +9,7 @@ onresize=function(){
 }
 
 onload=function(){
+	cargaOpciones()
 	//init()
 	pantalla()
 	botondia.style.display="none"
@@ -415,8 +416,28 @@ function quitarFiltros(){
 }
 
 function go(){
+	guardaOpciones()
 	intro.style.display="none"
 	juego.style.display=null
 	cargaMenu()
 	actualizar()
+}
+
+
+function guardaOpciones(){
+	localStorage.setItem("dif", document.formacion.selectorColonias.value)
+	localStorage.setItem("asc", document.formacion.selectorAscidias.value)
+}
+
+function cargaOpciones(){
+	var dif=localStorage.getItem("dif")
+	var asc=localStorage.getItem("asc")
+	if(dif) 
+		document.formacion.selectorColonias.value=dif
+	else
+		document.formacion.selectorColonias.value=0
+	if(asc) 
+		document.formacion.selectorAscidias.value=asc
+	else
+		document.formacion.selectorColonias.value=0
 }
