@@ -59,31 +59,50 @@ function init(){
 		originales[i].clase=0
 	}
 
-	//console.log("AAA"+document.formacion.selectorAscidias.value)
-	if(document.formacion.selectorAscidias.value!=0)
-		shuffle(ascEspeciales)
+	var numeros=[]
 
-	originales.push(ascEspeciales[0])
+	
+	//console.log(+document.formacion.selectorAscidias.value)
+	if(+document.formacion.selectorAscidias.value==0)
+		//shuffle(ascEspeciales)
+		numeros=[0,1,2,3,4,5]
+
+	if(+document.formacion.selectorAscidias.value==1){
+		numeros=[0,1,2,3,4,5]
+		shuffle(numeros)
+	}
+
+	if(+document.formacion.selectorAscidias.value==2){
+		numeros=[6,7,8,9,10,11]
+		shuffle(numeros)
+	}
+
+	if(+document.formacion.selectorAscidias.value==3){
+		numeros=[0,1,2,3,4,5,6,7,8,9,10,11]
+		shuffle(numeros)		
+	}
+		
+	originales.push(ascEspeciales[numeros[0]])
 	originales[4].coste=[1,0,0]
 	originales[4].clase=1
 
-	originales.push(ascEspeciales[1])
+	originales.push(ascEspeciales[numeros[1]])
 	originales[5].coste=[2,0,0]
 	originales[5].clase=1
 	
-	originales.push(ascEspeciales[2])
+	originales.push(ascEspeciales[numeros[2]])
 	originales[6].coste=[3,0,0]
 	originales[6].clase=1
 	
-	originales.push(ascEspeciales[3])
+	originales.push(ascEspeciales[numeros[3]])
 	originales[7].coste=[0,1,0]
 	originales[7].clase=1
 	
-	originales.push(ascEspeciales[4])
+	originales.push(ascEspeciales[numeros[4]])
 	originales[8].coste=[0,2,0]
 	originales[8].clase=1
 	
-	originales.push(ascEspeciales[5])
+	originales.push(ascEspeciales[numeros[5]])
 	originales[9].coste=[0,0,1]
 	originales[9].clase=1
 	

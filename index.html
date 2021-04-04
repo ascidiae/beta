@@ -18,12 +18,6 @@
 				<h1 id="tituloIntro">Ascidiae</h1>
 			</div>
 			<form name="formacion" style="display:flex;">
-			<div class="bloqueOpciones" style="display:none">
-				<label for="cantidadColonias">Cantidad de colonias </label>
-				<input type="number" min="1" max="10" value="3" id="cantidadColonias">
-				<label for="cantidadColonias"> 1-10</label>
-
-			</div>
 			<div class="bloqueOpciones" style="display:flex;flex-direction:column;justify-content:center;">
 				<label for="colonia4">
 				<input type="radio" name="selectorColonias" value="0" id="colonia4">
@@ -40,29 +34,31 @@
 			<div class="bloqueOpciones" style="display:flex;flex-direction:column;justify-content:center;" >
 				<label for="partida1">
 				<input type="radio" name="selectorAscidias" value="0" id="partida1">
-				1st game</label>
+				1st game fix</label>
 				
 				<label for="partidaR">
 				<input type="radio" name="selectorAscidias" value="1" id="partidaR">
-				1st REMIX</label>
+				1st game remix</label>
 				
 				<label for="partida2">
-				<input type="radio" name="selectorAscidias" value="2" id="partida2" disabled>
+				<input type="radio" name="selectorAscidias" value="2" id="partida2">
 				2nd game</label>
 				
 				<label for="partidaZ">
 				<input type="radio" name="selectorAscidias" value="3" id="partidaZ">
-				Random</label>
+				Full random</label>
 			</div>
+			<button onclick="toggleFullScreen()" class="bloqueOpciones" type="button">
+			<img src="img/ico/fullscreen.png" style="width:5em"></button>
 			</form>
 			
 				<!-- <input type="button" value="Full screen" onclick="toggleFullScreen()"> -->
 			
 			
-				<input type="button" value="Play FullScreen" onclick="toggleFullScreen();go()" style="font-size:200%">
-				<input type="button" value="Play regular" onclick="go()" style="font-size:100%">
+				<!-- <input type="button" value="Play FullScreen" onclick="toggleFullScreen();go()" style="font-size:200%"> -->
+				<input type="button" value="Play" onclick="go()" style="padding-left:8em;padding-right:8em;font-size:150%;">
 			<br>
-			
+			<form style="display:flex;">
 			<div  class="bloqueOpciones">
 				<li>
 				<a href="pnp.pdf" target="_blank">PNP</a>
@@ -84,7 +80,7 @@
 				<a href="sheet_es.pdf" target="_blank">Hoja de presentación</a>
 				</li>
 			</div>
-			
+			</form>
 		</section>
 		<section id="juego" style="display:none">
 		<div id="contraventana">

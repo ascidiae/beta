@@ -69,12 +69,12 @@ var ascEspeciales=[
 	//arctica
 	img:"img/asc/arctica.png",
 	habilidad:function(){arctica(this)}
-}/*,
+},
 {
 	//chordata
 	img:"img/asc/chordata.png",
 	habilidad:function(){chordata(this)}
-}*/,
+},
 {
 	//colectiva
 	img:"img/asc/collectiva.png",

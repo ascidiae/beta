@@ -155,6 +155,52 @@ function menuHabilis(t){
 	icono5.onclick=icono5.ontouchstart=dormir
 }
 
+function chordata(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(poblacion(t)>=1)
+			if(t.renacuajos[2].length>0){
+				menuChordata(t)//menu	
+				return
+			}
+			else{
+				menuHabilis(t)
+				return
+			}
+	}
+	finHabilidad()
+}
+
+function menuChordata(t){
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+	icono1.src="img/ico/pensar.png"
+	icono2.src="img/ico/menosb.png"
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+  
+	icono1.onclick=function(){
+		ventana.classList.remove("activa")
+		menuHabilis(t)
+		//finHabilidad()
+	}
+	
+	icono2.onclick=function(){
+		consume(t,2)
+		cria(t, 0)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+}
+
+
 function limpida(t){
 	if(poblacion(t)>6){
 		purga(t)

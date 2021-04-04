@@ -1,4 +1,5 @@
 function toggleFullScreen() {
+	console.log("va")
   var doc = window.document;
   var docEl = doc.documentElement;
 
