@@ -349,3 +349,6 @@ body.vertical #ayudante{
 	font-size:12px;
 }
 
+audio{
+	display:none;
+}

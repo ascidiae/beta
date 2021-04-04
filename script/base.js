@@ -6,6 +6,10 @@ function cria(t, color){
 	temp.classList.add("renacuajo")
 	temp.classList.add(c[color])
 	
+	if(color==0) sonar(pop3)
+	if(color==1) sonar(pop1)
+	if(color==2) sonar(pop2)
+	
 	//console.log(temp)
 	temp.setAttribute("posx", t.posx)
 	temp.setAttribute("posy", t.posy)
@@ -128,3 +132,14 @@ function quitaAscidia(index){
 	lista.splice(index,1)
 }
 
+function sonar(s){
+	
+	if(s.currentTime==0 || s.ended){
+		console.log("entra")
+		s.play()
+	}
+	else{
+		console.log("espera")
+		setTimeout(function(){sonar(s)}, 500)
+	}
+}
