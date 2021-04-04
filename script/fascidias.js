@@ -606,3 +606,171 @@ function menuCollectiva(t){
 		ventana.classList.remove("activa")
 	}
 }
+
+function arlecchina(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[0].length>=1 && t.renacuajos[1].length>=1 && t.renacuajos[2].length>=1){
+			cria(t,0)
+			cria(t,1)
+			cria(t,2)
+			setTimeout(function(){empuja(t, 0, 1)},250)
+			setTimeout(function(){empuja(t, 1, 1)},250)
+			setTimeout(function(){empuja(t, 2, 1)},250)
+		}
+    }
+	
+	finHabilidad()
+}
+
+function massiva(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[0].length>=6){
+			menuMassiva(t)
+			return
+		}
+    }
+	
+	finHabilidad()
+}
+
+function menuMassiva(t){
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+
+	icono1.src="img/ico/mast.png"
+	icono2.src="img/ico/masb.png"
+
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+  
+	icono1.onclick=function(){
+		cria(t,1)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		cria(t,2)
+		setTimeout(function(){empuja(t, 2, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+}
+
+function serrata(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		cria(t,0)
+		cria(t,0)
+		setTimeout(function(){empuja(t, 0, 0)},250)
+		setTimeout(function(){empuja(t, 0, 2)},250)
+	}
+	
+	finHabilidad()
+	
+}
+
+function scalena(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[0].length>=3){
+			consume(t,0)
+			cria(t,1)
+			
+			setTimeout(function(){empuja(t, 1, 1)},250)
+			
+		}
+	}
+	
+	finHabilidad()
+	
+}
+
+function xerocephalica(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[0].length>=1 && t.renacuajos[1].length>=1){
+			
+			cria(t,2)
+			
+			
+			empujaTodo(t, 0, 1)
+			empujaTodo(t, 1, 1)
+			empujaTodo(t, 2, 1)
+
+		}
+	}
+	
+	finHabilidad()
+	
+}
+
+function stator(t){
+	if(poblacion(t)>6){
+		purga(t)
+	}
+	else{
+		if(t.renacuajos[2].length>=1){
+			menuStator(t)
+			return
+		}
+		else{
+			cria(t,0)
+			
+			setTimeout(function(){empuja(t, 0, 1)},250)
+			
+		}
+			
+	}
+	finHabilidad()
+}
+
+function menuStator(t){
+	while (ventana.firstChild)
+		ventana.removeChild(ventana.lastChild);
+
+	ventana.classList.add("activa")
+
+	var icono1=document.createElement("img")
+	var icono2=document.createElement("img")
+
+	icono1.src="img/ico/masn.png"
+	icono2.src="img/ico/mast.png"
+
+	ventana.appendChild(icono1)
+	ventana.appendChild(icono2)
+  
+	icono1.onclick=function(){
+		cria(t,0)
+		setTimeout(function(){empuja(t, 0, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+	icono2.onclick=function(){
+		cria(t,1)
+		setTimeout(function(){empuja(t, 1, 1)},250)
+		finHabilidad()
+		ventana.classList.remove("activa")
+	}
+	
+}

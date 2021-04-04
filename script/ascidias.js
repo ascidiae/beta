@@ -94,6 +94,36 @@ var ascEspeciales=[
 	//turbida
 	img:"img/asc/turbida.png",
 	habilidad:function(){turbida(this)}
+},
+{
+	//arlecchina
+	img:"img/asc/arlecchina.png",
+	habilidad:function(){arlecchina(this)}
+},
+{
+	//massiva
+	img:"img/asc/massiva.png",
+	habilidad:function(){massiva(this)}
+},
+{
+	//sclaena
+	img:"img/asc/scalena.png",
+	habilidad:function(){scalena(this)}
+},
+{
+	//stator
+	img:"img/asc/stator.png",
+	habilidad:function(){stator(this)}
+},
+{
+	//serrata
+	img:"img/asc/serrata.png",
+	habilidad:function(){serrata(this)}
+},
+{
+	//xero
+	img:"img/asc/xerocephalica.png",
+	habilidad:function(){xerocephalica(this)}
 }
 ]
 
